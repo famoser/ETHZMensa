@@ -45,6 +45,7 @@
     <Compile Include="Helpers\HtmlParser.cs" />
     <Compile Include="Models\Base\ModelBase.cs" />
     <Compile Include="Models\ConfigModels\ConfigModel.cs" />
+    <Compile Include="Models\ConfigModels\LocationConfigModel.cs" />
     <Compile Include="Models\ConfigModels\MensaConfigModel.cs" />
     <Compile Include="Models\LocationModel.cs" />
     <Compile Include="Models\MensaModel.cs" />

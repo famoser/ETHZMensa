@@ -17,29 +17,12 @@ namespace Famoser.ETHZMensa.Business.Models
         }
 
         public string Name { get; set; }
+        public string MealTime { get; set; }
 
         public Uri TodayUrl { get; set; }
         public Uri InfoUrl { get; set; }
 
-        private string _openingTimes;
-        public string OpeningTimes
-        {
-            get { return _openingTimes; }
-            set { Set(ref _openingTimes, value); }
-        }
-
-        private ObservableCollection<MenuModel> _menuMittags;
-        public ObservableCollection<MenuModel> MenuMittags
-        {
-            get { return _menuMittags; }
-            set { Set(ref _menuMittags, value); }
-        }
-
-        private ObservableCollection<MenuModel> _menuAbends;
-        public ObservableCollection<MenuModel> MenuAbends
-        {
-            get { return _menuAbends; }
-            set { Set(ref _menuAbends, value); }
-        }
+        public ObservableCollection<MenuModel> MenuMittags { get; set; }
+        public ObservableCollection<MenuModel> MenuAbends { get; set; }
     }
 }

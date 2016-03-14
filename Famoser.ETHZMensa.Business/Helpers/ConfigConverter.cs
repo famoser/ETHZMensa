@@ -18,21 +18,29 @@ namespace Famoser.ETHZMensa.Business.Helpers
             {
                 InfoUrl = new Uri(config.InfoUrl),
                 Name = config.Name,
+                MealTime = config.MealTime,
                 TodayUrl = new Uri(config.TodayUrl)
             };
         }
 
-        public LocationModel ConvertToModel(List<MensaConfigModel> mensas, string location)
+        public LocationModel ConvertToModel(LocationConfigModel config)
         {
             var model = new LocationModel()
             {
-                Name =  location
+                Name = config.Name,
+                Mensas = ConvertToModel(config.Mensas)
             };
-            foreach (var mensaConfigModel in mensas)
-            {
-                model.Mensas.Add(ConvertToModel(mensaConfigModel));
-            }
             return model;
+        }
+
+        public ObservableCollection<MensaModel> ConvertToModel(List<MensaConfigModel> config)
+        {
+            var list = new ObservableCollection<MensaModel>();
+            foreach (var mensaConfigModel in config)
+            {
+                list.Add(ConvertToModel(mensaConfigModel));
+            }
+            return list;
         }
     }
 }

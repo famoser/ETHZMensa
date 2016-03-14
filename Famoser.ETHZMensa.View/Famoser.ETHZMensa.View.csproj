@@ -45,7 +45,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Messages.cs" />
+    <Compile Include="Enums\Pages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IInteractionService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MensaViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelLocator.cs" />

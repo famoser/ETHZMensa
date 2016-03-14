@@ -1,1 +1,99 @@
-﻿
+﻿{
+
+  "Locations": [
+    {
+      "Name": "Zentrum",
+      "Mensas": [
+        {
+          "Name": "Clausiusbar",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=13&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/clausiusbar"
+        },
+        {
+          "Name": "Dozentenfoyer",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=4&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/dozfoyer"
+        },
+        {
+          "Name": "Foodtrailer",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=9&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/foodtrailer_etz"
+        },
+        {
+          "Name": "G-ESSbar",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=6&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/infbar"
+        },
+        {
+          "Name": "Mensa Polyterrasse",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=11&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/mensa"
+        },
+        {
+          "Name": "Polysnack",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=5&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/snack"
+        },
+        {
+          "Name": "Restaurant foodLAB",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=3&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/rest_cad"
+        },
+        {
+          "Name": "Tannenbar",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=12&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/tannenbar"
+        }
+      ]
+    },
+    {
+      "Name": "Hoenggerberg",
+      "Mensas": [
+        {
+          "Name": "Alumni quattro Lounge",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=7&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge"
+        },
+        {
+          "Name": "Bistro",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=15&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/bistro"
+        },
+        {
+          "Name": "FUSION coffee",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=8&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge"
+        },
+        {
+          "Name": "FUSION meal",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=2&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge"
+        },
+        {
+          "Name": "Hexagon",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=21&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge"
+        },
+        {
+          "Name": "WOKA",
+          "MealTime": "11:00-14:00",
+          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=19&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="Famoser.ETHZMensa.Presentation.WinUniversal.Pages.MensaPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Famoser.ETHZMensa.Presentation.WinUniversal.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+    DataContext="{Binding MensaViewModel, Source={StaticResource Locator}}">
+    <Page.Resources>
+        <DataTemplate x:Key="MenuDataTemplate">
+            <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource BigTexBlock}" Padding="10,10,10,0" Text="{Binding Title}" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}" />
+                    <TextBlock Style="{StaticResource SecondaryBigTexBlock}" Typography.Capitals="SmallCaps"  Text="{Binding MenuName}" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}" />
+                    <TextBlock Style="{StaticResource SecondaryTexBlock}" Text="{Binding Description}" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}" />
+                    <TextBlock Style="{StaticResource SecondaryTexBlock}" Text="{Binding Prices}" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}" />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Mensa.Name}" Style="{StaticResource BigTexBlock}" />
+        <TextBlock Grid.Row="1" Text="{Binding Mensa.MealTime}" Style="{StaticResource SecondaryBigTexBlock}" />
+        <ListView Grid.Row="2" ItemTemplate="{StaticResource MenuDataTemplate}" ItemContainerStyle="{StaticResource StretchListViewItemStyle}" IsItemClickEnabled="True" ItemsSource="{Binding Mensa.MenuMittags}" />
+        <TextBlock Grid.Row="3"  Padding="10">    
+                <Hyperlink NavigateUri="{Binding Mensa.InfoUrl}">
+                    <Run Text="Mehr Informationen" />
+                </Hyperlink>
+                <Run Text=" / " />
+                <Hyperlink NavigateUri="{Binding Mensa.TodayUrl}">
+                    <Run Text="Detailierter Menuplan" />
+                </Hyperlink>
+        </TextBlock>
+    </Grid>
+</Page>
