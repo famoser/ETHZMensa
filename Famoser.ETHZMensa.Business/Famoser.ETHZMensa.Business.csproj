@@ -41,6 +41,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\ConfigConverter.cs" />
+    <Compile Include="Helpers\HtmlParser.cs" />
+    <Compile Include="Models\Base\ModelBase.cs" />
     <Compile Include="Models\ConfigModels\ConfigModel.cs" />
     <Compile Include="Models\ConfigModels\MensaConfigModel.cs" />
     <Compile Include="Models\LocationModel.cs" />
