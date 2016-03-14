@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Famoser.ETHZMensa.Business.Models
 {
-    class MensaModel
+    public class MensaModel
     {
         public string OpeningTimes { get; set; }
         public ObservableCollection<MenuModel> MenuMittags { get; set; }
