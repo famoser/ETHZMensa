@@ -89,8 +89,8 @@ namespace Famoser.ETHZMensa.View.ViewModel
                 _refreshCommand.RaiseCanExecuteChanged();
                 await _mensaRepository.Refresh();
 
-                _refreshCommand.RaiseCanExecuteChanged();
                 _isRefreshing = false;
+                _refreshCommand.RaiseCanExecuteChanged();
             }
             else
                 _refreshRequested = true;
