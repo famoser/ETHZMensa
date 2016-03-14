@@ -7,7 +7,10 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
+using Windows.UI;
 using Windows.UI.Core;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -100,8 +103,20 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal
                 }
             };
 
+            InitView();
+
+
             // Ensure the current window is active
             Window.Current.Activate();
+        }
+
+        private async void InitView()
+        {
+            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                var statusBar = StatusBar.GetForCurrentView();
+                await statusBar.HideAsync();
+            }
         }
 
         /// <summary>

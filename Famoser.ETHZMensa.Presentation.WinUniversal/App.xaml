@@ -4,12 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Famoser.ETHZMensa.Presentation.WinUniversal"
     xmlns:viewModel="using:Famoser.ETHZMensa.Presentation.WinUniversal.ViewModel"
+    xmlns:converters="using:Famoser.ETHZMensa.Presentation.WinUniversal.Converters"
     RequestedTheme="Light">
     <Application.Resources>
         <ResourceDictionary>
 
             <viewModel:ViewModelLocator x:Key="Locator" />
-
+            
+<converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
 
             <Style x:Key="StretchListViewItemStyle" TargetType="ListViewItem">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />

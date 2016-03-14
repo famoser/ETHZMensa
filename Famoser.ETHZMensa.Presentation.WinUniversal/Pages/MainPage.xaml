@@ -25,9 +25,23 @@
                CompactPaneLength="0" OpenPaneLength="300" PaneBackground="{ThemeResource SystemControlBackgroundAccentBrush}">
         <SplitView.Pane>
             <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode="Enabled">
-                <StackPanel>
-                    <ListView ItemClick="ListViewBase_OnItemClick" IsItemClickEnabled="True" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}" ItemContainerStyle="{StaticResource StretchListViewItemStyle}"  ItemTemplate="{StaticResource LocationDataTemplate}" ItemsSource="{Binding Locations}" />
-                </StackPanel>
+                <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode="Enabled" HorizontalScrollMode="Disabled">
+                    <StackPanel>
+                        <ListView ScrollViewer.VerticalScrollMode="Disabled"  ItemClick="ListViewBase_OnItemClick" IsItemClickEnabled="True" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}" ItemContainerStyle="{StaticResource StretchListViewItemStyle}"  ItemTemplate="{StaticResource LocationDataTemplate}" ItemsSource="{Binding Locations}" />
+                        <TextBlock Margin="0,10,0,0" Style="{StaticResource SecondaryTexBlock}" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                            <Run Text="App erstellt von" />
+                            <Hyperlink NavigateUri="http://famoser.ch" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                                <Run Text="famoser"/>
+                            </Hyperlink>
+                            <LineBreak />
+                            <Run Text="Quellcode auf" />
+                            <Hyperlink NavigateUri="https://github.com/famoser/ETHZMensa" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                                <Run Text="github"/>
+                            </Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+
+                </ScrollViewer>
             </ScrollViewer>
         </SplitView.Pane>
         <SplitView.Content>
