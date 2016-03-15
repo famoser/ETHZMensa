@@ -9,5 +9,6 @@ namespace Famoser.ETHZMensa.Business.Models.ConfigModels
     public class ConfigModel
     {
         public List<LocationConfigModel> Locations { get; set; }
+        public int Version { get; set; }
     }
 }

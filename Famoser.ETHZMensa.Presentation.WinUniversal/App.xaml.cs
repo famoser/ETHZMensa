@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Threading;
 using GalaSoft.MvvmLight.Views;
 
 namespace Famoser.ETHZMensa.Presentation.WinUniversal
@@ -105,6 +106,7 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal
 
             InitView();
 
+            DispatcherHelper.Initialize();
 
             // Ensure the current window is active
             Window.Current.Activate();

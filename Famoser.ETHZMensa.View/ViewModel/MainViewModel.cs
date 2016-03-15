@@ -26,8 +26,8 @@ namespace Famoser.ETHZMensa.View.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        private IMensaRepository _mensaRepository;
-        private INavigationService _navigationService;
+        private readonly IMensaRepository _mensaRepository;
+        private readonly INavigationService _navigationService;
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>

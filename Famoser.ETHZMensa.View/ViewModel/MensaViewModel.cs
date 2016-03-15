@@ -16,7 +16,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
 {
     public class MensaViewModel : ViewModelBase
     {
-        private IInteractionService _interactionService;
+        private readonly IInteractionService _interactionService;
         public MensaViewModel(IMensaRepository mensaRepository, IInteractionService interactionService)
         {
             _interactionService = interactionService;
@@ -38,7 +38,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
             set { Set(ref _mensa, value); }
         }
 
-        private RelayCommand<Uri> _openInBrowser;
+        private readonly RelayCommand<Uri> _openInBrowser;
         public ICommand OpenInBrowserCommand => _openInBrowser;
 
         private void OpenInBrowser(Uri uri)

@@ -19,7 +19,8 @@ namespace Famoser.ETHZMensa.Business.Helpers
                 InfoUrl = new Uri(config.InfoUrl),
                 Name = config.Name,
                 MealTime = config.MealTime,
-                TodayUrl = new Uri(config.TodayUrl)
+                LogicUrl = new Uri(config.LogicUrl),
+                Type =  config.Type
             };
         }
 

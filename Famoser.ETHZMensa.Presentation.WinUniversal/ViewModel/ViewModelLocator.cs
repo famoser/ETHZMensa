@@ -51,7 +51,6 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal.ViewModel
             else
             {
                 SimpleIoc.Default.Register<INavigationService, MockNavigationService>();
-                
             }
         }
     }

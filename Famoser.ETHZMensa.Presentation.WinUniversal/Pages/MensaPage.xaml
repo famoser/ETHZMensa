@@ -29,7 +29,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{Binding Mensa.Name}" Style="{StaticResource BigTexBlock}" />
         <TextBlock Grid.Row="1" Text="{Binding Mensa.MealTime}" Style="{StaticResource SecondaryBigTexBlock}" />
-        <ListView Grid.Row="2" ItemTemplate="{StaticResource MenuDataTemplate}" ItemContainerStyle="{StaticResource StretchListViewItemStyle}" IsItemClickEnabled="True" ItemsSource="{Binding Mensa.MenuMittags}" />
+        <ListView Grid.Row="2" ItemTemplate="{StaticResource MenuDataTemplate}" ItemContainerStyle="{StaticResource StretchListViewItemStyle}" IsItemClickEnabled="True" ItemsSource="{Binding Mensa.Menus}" />
         <TextBlock Grid.Row="3"  Padding="10">    
                 <Hyperlink NavigateUri="{Binding Mensa.InfoUrl}">
                     <Run Text="Mehr Informationen" />

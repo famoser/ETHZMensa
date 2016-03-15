@@ -4,27 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Famoser.ETHZMensa.Business.Services;
+using Famoser.ETHZMensa.View.Services;
 using GalaSoft.MvvmLight;
 
 namespace Famoser.ETHZMensa.View.ViewModel
 {
     public class ProgressViewModel : ViewModelBase, IProgressService
     {
+        private IInteractionService _interactionService;
+        public ProgressViewModel(IInteractionService interactionService)
+        {
+            _interactionService = interactionService;
+            if (IsInDesignMode)
+            {
+                ShowProgress = true;
+                ActiveProgress = 8;
+                MaxProgress = 20;
+            }
+        }
+
         public void InitializeProgressBar(int total)
         {
-            ShowProgress = true;
-            ActiveProgress = 0;
-            MaxProgress = total;
+            _interactionService.CheckBeginInvokeOnUi(() =>
+            {
+                ShowProgress = true;
+                ActiveProgress = 0;
+                MaxProgress = total;
+            });
         }
 
         public void IncrementProgress()
         {
-            ActiveProgress++;
+            _interactionService.CheckBeginInvokeOnUi(() =>
+            {
+                ActiveProgress++;
+            });
         }
 
         public void HideProgress()
         {
-            ShowProgress = false;
+            _interactionService.CheckBeginInvokeOnUi(() =>
+            {
+                ShowProgress = false;
+            });
         }
 
         private bool _showProgress;

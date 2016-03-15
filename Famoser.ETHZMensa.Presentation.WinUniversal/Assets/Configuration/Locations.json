@@ -1,5 +1,5 @@
 ﻿{
-
+  "Version": 2,
   "Locations": [
     {
       "Name": "Zentrum",
@@ -7,91 +7,253 @@
         {
           "Name": "Clausiusbar",
           "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=13&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/clausiusbar"
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=13&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/clausiusbar",
+          "Type": 0
         },
         {
           "Name": "Dozentenfoyer",
           "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=4&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/dozfoyer"
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=4&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/dozfoyer",
+          "Type": 0
         },
         {
           "Name": "Foodtrailer",
           "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=9&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/foodtrailer_etz"
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=9&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/foodtrailer_etz",
+          "Type": 0
         },
         {
           "Name": "G-ESSbar",
-          "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=6&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/infbar"
+          "MealTime": "11:00-13:30",
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=6&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/infbar",
+          "Type": 0
         },
         {
           "Name": "Mensa Polyterrasse",
-          "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=11&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/mensa"
+          "MealTime": "11:00-13:30",
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=11&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/mensa",
+          "Type": 0
+        },
+        {
+          "Name": "Mensa Polyterrasse - Abendessen",
+          "MealTime": "17:30-19:30",
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=11&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/mensa",
+          "Type": 1
         },
         {
           "Name": "Polysnack",
           "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=5&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/snack"
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=5&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/snack",
+          "Type": 0
         },
         {
           "Name": "Restaurant foodLAB",
           "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=3&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/rest_cad"
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=3&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/rest_cad",
+          "Type": 0
         },
         {
           "Name": "Tannenbar",
-          "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=12&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/tannenbar"
+          "MealTime": "11:00-13:30",
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=12&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/tannenbar",
+          "Type": 0
         }
       ]
     },
     {
-      "Name": "Hoenggerberg",
+      "Name": "Hönggerberg",
       "Mensas": [
         {
           "Name": "Alumni quattro Lounge",
-          "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=7&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge"
+          "MealTime": "11:00-21:00",
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=7&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge",
+          "Type": 0
         },
         {
           "Name": "Bistro",
-          "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=15&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/bistro"
+          "MealTime": "07:30-19:00",
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=15&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/bistro",
+          "Type": 0
         },
         {
           "Name": "FUSION coffee",
-          "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=8&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge"
+          "MealTime": "17:30-19:00",
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=8&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge",
+          "Type": 0
         },
         {
           "Name": "FUSION meal",
           "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=2&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge"
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=2&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge",
+          "Type": 0
         },
         {
           "Name": "Hexagon",
-          "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=21&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge"
+          "MealTime": "11:15-13:30",
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=21&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge",
+          "Type": 0
         },
         {
           "Name": "WOKA",
+          "MealTime": "10:45-14:15",
+          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=19&language=DE",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge",
+          "Type": 0
+        }
+      ]
+    },
+    {
+      "Name": "UZH Zentrum",
+      "Mensas": [
+        {
+          "Name": "Untere Mensa A",
+          "MealTime": "11:00-14:30",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/zentrum-a_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-zentrum_di.html",
+          "Type": 2
+        },
+        {
+          "Name": "Untere Mensa A - Abendessen",
+          "MealTime": "17:00-19:30",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/zentrum-a-abend_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-zentrum_di.html",
+          "Type": 2
+        },
+        {
+          "Name": "Obere Mensa B",
+          "MealTime": "11:00-14:30",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/zentrum-b_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-zentrum_di.html",
+          "Type": 2
+        },
+        {
+          "Name": "Lichthof Rondell",
           "MealTime": "11:00-14:00",
-          "TodayUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=19&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge"
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/lichthof-rondell_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/lichthof-rondell_di.html",
+          "Type": 2
+        },
+        {
+          "Name": "Rämi 59",
+          "MealTime": "11:00-14:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/raemi59_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/raemi59.html",
+          "Type": 2
+        }
+      ]
+    },
+    {
+      "Name": "UZH Irchel",
+      "Mensas": [
+        {
+          "Name": "Irchel",
+          "MealTime": "11:00-14:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/mensa-uzh-irchel_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-irchel.html",
+          "Type": 2
+        },
+        {
+          "Name": "Cafeteria Irchel Atrium",
+          "MealTime": "11:00-14:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/irchel-cafeteria-atrium_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-irchel.html",
+          "Type": 2
+        },
+        {
+          "Name": "Cafeteria Irchel Seerose - Abendessen",
+          "MealTime": "17:00-19:30",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/irchel-cafeteria-seerose-abend_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-irchel.html",
+          "Type": 2
+        },
+        {
+          "Name": "Binzmühle",
+          "MealTime": "11:00-14:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/mensa-uzh-binzmuehle_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/mensa-uzh-binzmuehle_[DAY_SHORT].html",
+          "Type": 2
+        },
+        {
+          "Name": "Cafeteria Zentrum für Zahnmedizin (ZZM)",
+          "MealTime": "11:00-14:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-zzm_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-zzm_[DAY_SHORT].html",
+          "Type": 2
+        },
+        {
+          "Name": "Cafeteria Tierspital",
+          "MealTime": "11:00-14:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-tierspital_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-tierspital_[DAY_SHORT].html",
+          "Type": 2
+        },
+        {
+          "Name": "Cafeteria Botanischer Garten",
+          "MealTime": "11:00-14:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-botgarten_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-botgarten_[DAY_SHORT].html",
+          "Type": 2
+        },
+        {
+          "Name": "Cafeteria Plattenstrasse",
+          "MealTime": "11:00-14:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-plattenstrasse_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-plattenstrasse_[DAY_SHORT].html",
+          "Type": 2
+        }
+      ]
+    },
+    {
+      "Name": "UZH Other",
+      "Mensas": [
+        {
+          "Name": "Binzmühle",
+          "MealTime": "11:15-14:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/mensa-uzh-binzmuehle_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-binzmuehle.html",
+          "Type": 2
+        },
+        {
+          "Name": "Cafeteria Zentrum für Zahnmedizin (ZZM)",
+          "MealTime": "07:00-17:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-zzm_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/cafeteria-uzh-zzm.html",
+          "Type": 2
+        },
+        {
+          "Name": "Cafeteria Tierspital",
+          "MealTime": "07.00-16:30",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-tierspital_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/cafeteria-uzh-tierspital.html",
+          "Type": 2
+        },
+        {
+          "Name": "Cafeteria Botanischer Garten",
+          "MealTime": "09:00-17:00",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-botgarten_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/cafeteria-uzh-botgarten.html",
+          "Type": 2
+        },
+        {
+          "Name": "Cafeteria Plattenstrasse",
+          "MealTime": "07:00-16:30",
+          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-plattenstrasse_[DAY_SHORT].html",
+          "InfoUrl": "http://www.mensa.uzh.ch/standorte/cafeteria-uzh-plattenstrasse.html",
+          "Type": 2
         }
       ]
     }

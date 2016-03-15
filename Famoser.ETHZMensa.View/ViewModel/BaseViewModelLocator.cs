@@ -35,7 +35,6 @@ namespace Famoser.ETHZMensa.View.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<MensaViewModel>();
 
@@ -65,7 +64,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<ProgressViewModel>();
+                return ServiceLocator.Current.GetInstance<IProgressService>() as ProgressViewModel;
             }
         }
 

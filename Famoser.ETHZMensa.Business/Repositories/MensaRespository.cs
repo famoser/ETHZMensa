@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Famoser.ETHZMensa.Business.Enums;
 using Famoser.ETHZMensa.Business.Helpers;
 using Famoser.ETHZMensa.Business.Models;
 using Famoser.ETHZMensa.Business.Models.ConfigModels;
@@ -28,7 +29,7 @@ namespace Famoser.ETHZMensa.Business.Repositories
             _progressService = progressService;
         }
 
-        private ObservableCollection<LocationModel> _locations;
+        private SaveModel _saveModel;
         public async Task<ObservableCollection<LocationModel>> GetLocations()
         {
             try
@@ -38,57 +39,60 @@ namespace Famoser.ETHZMensa.Business.Repositories
                 {
                     try
                     {
-                        _locations = JsonConvert.DeserializeObject<ObservableCollection<LocationModel>>(cache);
+                        _saveModel = JsonConvert.DeserializeObject<SaveModel>(cache);
                     }
                     catch (Exception ex)
                     {
                         LogHelper.Instance.LogException(ex);
                     }
                 }
-                if (_locations == null)
-                    _locations = new ObservableCollection<LocationModel>();
+                if (_saveModel == null)
+                    _saveModel = new SaveModel();
+                else if (_saveModel.Locations == null)
+                    _saveModel.Locations = new ObservableCollection<LocationModel>();
 
                 var config = await _storageService.GetLocationJson();
                 if (config == null)
-                    return _locations;
+                    return _saveModel.Locations;
 
                 var configModel = JsonConvert.DeserializeObject<ConfigModel>(config);
                 if (configModel == null)
-                    return _locations;
+                    return _saveModel.Locations;
 
                 bool modified = false;
 
-                if (_locations.Count != configModel.Locations.Count)
+                if (_saveModel.Version != configModel.Version || _saveModel.Locations.Count != configModel.Locations.Count)
                 {
-                    _locations.Clear();
+                    _saveModel.Version = configModel.Version;
+                    _saveModel.Locations.Clear();
                     foreach (var locationConfigModel in configModel.Locations)
                     {
-                        _locations.Add(ConfigConverter.Instance.ConvertToModel(locationConfigModel));
+                        _saveModel.Locations.Add(ConfigConverter.Instance.ConvertToModel(locationConfigModel));
                     }
                     modified = true;
                 }
                 else
                 {
-                    for (int i = 0; i < _locations.Count; i++)
+                    for (int i = 0; i < _saveModel.Locations.Count; i++)
                     {
-                        if (_locations[i].Name != configModel.Locations[i].Name)
+                        if (_saveModel.Locations[i].Name != configModel.Locations[i].Name)
                         {
-                            _locations.Insert(i, ConfigConverter.Instance.ConvertToModel(configModel.Locations[i]));
-                            _locations.RemoveAt(i + 1);
+                            _saveModel.Locations.Insert(i, ConfigConverter.Instance.ConvertToModel(configModel.Locations[i]));
+                            _saveModel.Locations.RemoveAt(i + 1);
                             modified = true;
                         }
-                        else if (_locations[i].Mensas.Count != configModel.Locations[i].Mensas.Count)
+                        else if (_saveModel.Locations[i].Mensas.Count != configModel.Locations[i].Mensas.Count)
                         {
-                            _locations[i].Mensas = ConfigConverter.Instance.ConvertToModel(configModel.Locations[i].Mensas);
+                            _saveModel.Locations[i].Mensas = ConfigConverter.Instance.ConvertToModel(configModel.Locations[i].Mensas);
                             modified = true;
                         }
                         else
                         {
-                            for (int j = 0; j < _locations[i].Mensas.Count; j++)
+                            for (int j = 0; j < _saveModel.Locations[i].Mensas.Count; j++)
                             {
-                                if (_locations[i].Mensas[j].Name != configModel.Locations[i].Mensas[j].Name)
+                                if (_saveModel.Locations[i].Mensas[j].Name != configModel.Locations[i].Mensas[j].Name)
                                 {
-                                    _locations[i].Mensas[j] = ConfigConverter.Instance.ConvertToModel(configModel.Locations[i].Mensas[j]);
+                                    _saveModel.Locations[i].Mensas[j] = ConfigConverter.Instance.ConvertToModel(configModel.Locations[i].Mensas[j]);
                                     modified = true;
                                 }
                             }
@@ -99,15 +103,15 @@ namespace Famoser.ETHZMensa.Business.Repositories
                 if (modified)
                     await Cache();
 
-                return _locations;
+                return _saveModel.Locations;
             }
             catch (Exception ex)
             {
-                _locations = new ObservableCollection<LocationModel>();
+                _saveModel.Locations = new ObservableCollection<LocationModel>();
                 LogHelper.Instance.LogException(ex);
             }
 
-            return _locations;
+            return _saveModel.Locations;
         }
 
         public ObservableCollection<LocationModel> GetExampleLocations()
@@ -141,15 +145,7 @@ namespace Famoser.ETHZMensa.Business.Repositories
             {
                 Name = "Clasiusbar",
                 MealTime = "07:30 - 19:30",
-                MenuAbends = new ObservableCollection<MenuModel>()
-                {
-                    GetExampleMenuModel(),
-                    GetExampleMenuModel(),
-                    GetExampleMenuModel(),
-                    GetExampleMenuModel(),
-                    GetExampleMenuModel()
-                },
-                MenuMittags = new ObservableCollection<MenuModel>()
+                Menus = new ObservableCollection<MenuModel>()
                 {
                     GetExampleMenuModel(),
                     GetExampleMenuModel(),
@@ -177,16 +173,34 @@ namespace Famoser.ETHZMensa.Business.Repositories
         {
             try
             {
-                foreach (var locationModel in _locations)
+                _progressService.InitializeProgressBar(_saveModel.Locations.Sum(l => l.Mensas.Count));
+                foreach (var locationModel in _saveModel.Locations)
                 {
                     foreach (var mensaModel in locationModel.Mensas)
                     {
+                        if (mensaModel.Type == LocationType.Uzh)
+                            mensaModel.TodayUrl = new Uri(mensaModel.LogicUrl.AbsoluteUri.Replace("[DAY_SHORT]", GetTodayShortDay()));
+                        else
+                        {
+                            mensaModel.TodayUrl = mensaModel.LogicUrl;
+                        }
+
                         var html = await _dataService.GetHtml(mensaModel.TodayUrl);
                         if (html != null)
-                            HtmlParser.Instance.ParseHtml(html, mensaModel);
+                        {
+                            if (mensaModel.Type == LocationType.Eth)
+                                HtmlParser.Instance.ParseEthHtml(html, mensaModel);
+                            else if (mensaModel.Type == LocationType.EthAbendessen)
+                                HtmlParser.Instance.ParseEthAbendessenHtml(html, mensaModel);
+                            else if (mensaModel.Type == LocationType.Uzh)
+                                HtmlParser.Instance.ParseUzhHtml(html, mensaModel);
+                        }
+
+                        _progressService.IncrementProgress();
                     }
                 }
                 await Cache();
+                _progressService.HideProgress();
             }
             catch (Exception ex)
             {
@@ -196,11 +210,28 @@ namespace Famoser.ETHZMensa.Business.Repositories
             return true;
         }
 
+        private string GetTodayShortDay()
+        {
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
+                return "mo";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
+                return "di";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Wednesday)
+                return "mi";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Thursday)
+                return "do";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Friday)
+                return "fr";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Saturday)
+                return "sa";
+            return "so";
+        }
+
         private async Task<bool> Cache()
         {
             try
             {
-                var locationJson = JsonConvert.SerializeObject(_locations);
+                var locationJson = JsonConvert.SerializeObject(_saveModel);
                 return await _storageService.SetCachedData(locationJson);
             }
             catch (Exception ex)
