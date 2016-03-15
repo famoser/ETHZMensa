@@ -21,6 +21,7 @@ using Windows.UI.Xaml.Navigation;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Threading;
 using GalaSoft.MvvmLight.Views;
+using Microsoft.ApplicationInsights;
 
 namespace Famoser.ETHZMensa.Presentation.WinUniversal
 {
@@ -35,9 +36,8 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal
         /// </summary>
         public App()
         {
-            Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync(
-                Microsoft.ApplicationInsights.WindowsCollectors.Metadata |
-                Microsoft.ApplicationInsights.WindowsCollectors.Session);
+           WindowsAppInitializer.InitializeAsync();
+            
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
