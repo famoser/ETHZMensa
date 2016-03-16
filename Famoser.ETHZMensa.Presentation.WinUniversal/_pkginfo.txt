@@ -1,1 +1,1 @@
-D:\Repos\Famoser.ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\AppPackages\Famoser.ETHZMensa.Presentation.WinUniversal_1.1.3.0\Famoser.ETHZMensa.Presentation.WinUniversal_1.1.3.0_x86_x64_arm.appxbundle
+D:\Repos\Famoser.ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\AppPackages\Famoser.ETHZMensa.Presentation.WinUniversal_1.1.4.0\Famoser.ETHZMensa.Presentation.WinUniversal_1.1.4.0_x86_x64_arm.appxbundle
