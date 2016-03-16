@@ -36,10 +36,9 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal
         /// </summary>
         public App()
         {
-           WindowsAppInitializer.InitializeAsync();
-            
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
         }
 
         /// <summary>
@@ -107,6 +106,7 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal
             InitView();
 
             DispatcherHelper.Initialize();
+            WindowsAppInitializer.InitializeAsync();
 
             // Ensure the current window is active
             Window.Current.Activate();

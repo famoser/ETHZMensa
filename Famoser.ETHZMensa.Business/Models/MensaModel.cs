@@ -23,6 +23,13 @@ namespace Famoser.ETHZMensa.Business.Models
         public Uri LogicUrl { get; set; }
         public Uri InfoUrl { get; set; }
 
+        private DateTime _lastTimeRefreshed;
+        public DateTime LastTimeRefreshed
+        {
+            get { return _lastTimeRefreshed; }
+            set { Set(ref _lastTimeRefreshed, value); }
+        }
+
         public LocationType Type { get; set; }
 
         public ObservableCollection<MenuModel> Menus { get; set; }

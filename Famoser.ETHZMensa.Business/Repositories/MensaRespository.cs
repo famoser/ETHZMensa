@@ -145,6 +145,7 @@ namespace Famoser.ETHZMensa.Business.Repositories
             {
                 Name = "Clasiusbar",
                 MealTime = "07:30 - 19:30",
+                LastTimeRefreshed = DateTime.Now,
                 Menus = new ObservableCollection<MenuModel>()
                 {
                     GetExampleMenuModel(),
@@ -173,32 +174,19 @@ namespace Famoser.ETHZMensa.Business.Repositories
         {
             try
             {
+                var list = new List<Task>();
                 _progressService.InitializeProgressBar(_saveModel.Locations.Sum(l => l.Mensas.Count));
                 foreach (var locationModel in _saveModel.Locations)
                 {
-                    foreach (var mensaModel in locationModel.Mensas)
-                    {
-                        if (mensaModel.Type == LocationType.Uzh)
-                            mensaModel.TodayUrl = new Uri(mensaModel.LogicUrl.AbsoluteUri.Replace("[DAY_SHORT]", GetTodayShortDay()));
-                        else
-                        {
-                            mensaModel.TodayUrl = mensaModel.LogicUrl;
-                        }
-
-                        var html = await _dataService.GetHtml(mensaModel.TodayUrl);
-                        if (html != null)
-                        {
-                            if (mensaModel.Type == LocationType.Eth)
-                                HtmlParser.Instance.ParseEthHtml(html, mensaModel);
-                            else if (mensaModel.Type == LocationType.EthAbendessen)
-                                HtmlParser.Instance.ParseEthAbendessenHtml(html, mensaModel);
-                            else if (mensaModel.Type == LocationType.Uzh)
-                                HtmlParser.Instance.ParseUzhHtml(html, mensaModel);
-                        }
-
-                        _progressService.IncrementProgress();
-                    }
+                    list.Add(RefreshTask(locationModel.Mensas));
                 }
+
+                foreach (var task in list)
+                {
+                    if (task.Status <= TaskStatus.Running)
+                        await task;
+                }
+
                 await Cache();
                 _progressService.HideProgress();
             }
@@ -208,6 +196,35 @@ namespace Famoser.ETHZMensa.Business.Repositories
                 return false;
             }
             return true;
+        }
+        
+        private async Task RefreshTask(ObservableCollection<MensaModel> mensas)
+        {
+            foreach (var mensaModel in mensas)
+            {
+                if (mensaModel.Type == LocationType.Uzh)
+                    mensaModel.TodayUrl = new Uri(mensaModel.LogicUrl.AbsoluteUri.Replace("[DAY_SHORT]", GetTodayShortDay()));
+                else
+                {
+                    mensaModel.TodayUrl = mensaModel.LogicUrl;
+                }
+
+                var html = await _dataService.GetHtml(mensaModel.TodayUrl);
+                if (html != null)
+                {
+                    bool res = false;
+                    if (mensaModel.Type == LocationType.Eth)
+                        res = HtmlParser.Instance.ParseEthHtml(html, mensaModel);
+                    else if (mensaModel.Type == LocationType.EthAbendessen)
+                        res = HtmlParser.Instance.ParseEthAbendessenHtml(html, mensaModel);
+                    else if (mensaModel.Type == LocationType.Uzh)
+                        res = HtmlParser.Instance.ParseUzhHtml(html, mensaModel);
+                    if (res)
+                        mensaModel.LastTimeRefreshed = DateTime.Now;
+                }
+
+                _progressService.IncrementProgress();
+            }
         }
 
         private string GetTodayShortDay()

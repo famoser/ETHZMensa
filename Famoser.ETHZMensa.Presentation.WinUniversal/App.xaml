@@ -13,6 +13,7 @@
             
 <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
             <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:DateTimeToStringConverter x:Key="DateTimeToStringConverter" />
 
             <Style x:Key="StretchListViewItemStyle" TargetType="ListViewItem">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
