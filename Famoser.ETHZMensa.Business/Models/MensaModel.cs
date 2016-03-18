@@ -30,6 +30,13 @@ namespace Famoser.ETHZMensa.Business.Models
             set { Set(ref _lastTimeRefreshed, value); }
         }
 
+        private bool _isFavorite;
+        public bool IsFavorite
+        {
+            get { return _isFavorite; }
+            set { Set(ref _isFavorite, value); }
+        }
+
         public LocationType Type { get; set; }
 
         public ObservableCollection<MenuModel> Menus { get; set; }

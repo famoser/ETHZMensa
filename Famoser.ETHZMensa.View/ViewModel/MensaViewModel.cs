@@ -17,11 +17,17 @@ namespace Famoser.ETHZMensa.View.ViewModel
     public class MensaViewModel : ViewModelBase
     {
         private readonly IInteractionService _interactionService;
+        private readonly IMensaRepository _mensaRepository;
+
         public MensaViewModel(IMensaRepository mensaRepository, IInteractionService interactionService)
         {
             _interactionService = interactionService;
+            _mensaRepository = mensaRepository;
             _openInBrowser = new RelayCommand<Uri>(OpenInBrowser);
+            _toggleFavorite = new RelayCommand(ToggleFavorite, () => CanExecuteToggleFavoriteCommand);
+
             Messenger.Default.Register<MensaModel>(this, Messages.Select, EvaluateSelect);
+
             if (IsInDesignMode)
                 Mensa = mensaRepository.GetExampleLocations()[0].Mensas[0];
         }
@@ -44,6 +50,23 @@ namespace Famoser.ETHZMensa.View.ViewModel
         private void OpenInBrowser(Uri uri)
         {
             _interactionService.OpenInBrowser(uri);
+        }
+
+        private readonly RelayCommand _toggleFavorite;
+        public ICommand ToggleFavoriteCommand => _toggleFavorite;
+        private bool CanExecuteToggleFavoriteCommand => !_isTogglingFavorite;
+
+        private bool _isTogglingFavorite;
+        private async void ToggleFavorite()
+        {
+            _isTogglingFavorite = true;
+            _toggleFavorite.RaiseCanExecuteChanged();
+
+            Mensa.IsFavorite = !Mensa.IsFavorite;
+            await _mensaRepository.SaveState();
+
+            _isTogglingFavorite = false;
+            _toggleFavorite.RaiseCanExecuteChanged();
         }
     }
 }

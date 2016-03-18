@@ -27,14 +27,21 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Mensa.Name}" Style="{StaticResource BigTexBlock}" />
-        <TextBlock Grid.Row="1" Text="{Binding Mensa.MealTime}" Style="{StaticResource SecondaryBigTexBlock}" />
-        <TextBlock Grid.Row="2" VerticalAlignment="Bottom" Style="{StaticResource SecondaryBigTexBlock}" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" Text="{Binding Mensa.Name}" Style="{StaticResource BigTexBlock}" />
+        <Button Command="{Binding ToggleFavoriteCommand}" Style="{StaticResource FlatButton}" Grid.Column="1" Grid.Row="0">
+            <SymbolIcon Symbol="{Binding Mensa.IsFavorite, Converter={StaticResource FavoriteToSymbolConverter}}" Style="{StaticResource FavoriteSymbolIcon}" />
+        </Button>
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Text="{Binding Mensa.MealTime}" Style="{StaticResource SecondaryBigTexBlock}" />
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" VerticalAlignment="Bottom" Style="{StaticResource SecondaryBigTexBlock}" >
             <Run Text="refreshed:" />
             <Run Text="{Binding Mensa.LastTimeRefreshed, Converter={StaticResource DateTimeToStringConverter}}" />
         </TextBlock>
-        <ListView Grid.Row="2" ItemTemplate="{StaticResource MenuDataTemplate}" ItemContainerStyle="{StaticResource StretchListViewItemStyle}" IsItemClickEnabled="True" ItemsSource="{Binding Mensa.Menus}" />
-        <TextBlock Grid.Row="3"  Padding="10">    
+        <ListView Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" ItemTemplate="{StaticResource MenuDataTemplate}" ItemContainerStyle="{StaticResource StretchListViewItemStyle}" IsItemClickEnabled="True" ItemsSource="{Binding Mensa.Menus}" />
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"  Padding="10">    
                 <Hyperlink NavigateUri="{Binding Mensa.InfoUrl}">
                     <Run Text="Mehr Informationen" />
                 </Hyperlink>

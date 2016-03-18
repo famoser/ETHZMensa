@@ -15,5 +15,6 @@ namespace Famoser.ETHZMensa.Business.Repositories.Interfaces
         ObservableCollection<LocationModel> GetExampleLocations();
 
         Task<bool> Refresh();
+        Task<bool> SaveState();
     }
 }

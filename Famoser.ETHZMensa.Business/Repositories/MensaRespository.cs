@@ -29,7 +29,7 @@ namespace Famoser.ETHZMensa.Business.Repositories
             _progressService = progressService;
         }
 
-        private SaveModel _saveModel;
+        private SaveModel _saveModel = new SaveModel();
         public async Task<ObservableCollection<LocationModel>> GetLocations()
         {
             try
@@ -44,11 +44,10 @@ namespace Famoser.ETHZMensa.Business.Repositories
                     catch (Exception ex)
                     {
                         LogHelper.Instance.LogException(ex);
+                        _saveModel = new SaveModel();
                     }
                 }
-                if (_saveModel == null)
-                    _saveModel = new SaveModel();
-                else if (_saveModel.Locations == null)
+                if (_saveModel.Locations == null)
                     _saveModel.Locations = new ObservableCollection<LocationModel>();
 
                 var config = await _storageService.GetLocationJson();
@@ -58,10 +57,8 @@ namespace Famoser.ETHZMensa.Business.Repositories
                 var configModel = JsonConvert.DeserializeObject<ConfigModel>(config);
                 if (configModel == null)
                     return _saveModel.Locations;
-
-                bool modified = false;
-
-                if (_saveModel.Version != configModel.Version || _saveModel.Locations.Count != configModel.Locations.Count)
+                
+                if (_saveModel.Version != configModel.Version)
                 {
                     _saveModel.Version = configModel.Version;
                     _saveModel.Locations.Clear();
@@ -69,39 +66,8 @@ namespace Famoser.ETHZMensa.Business.Repositories
                     {
                         _saveModel.Locations.Add(ConfigConverter.Instance.ConvertToModel(locationConfigModel));
                     }
-                    modified = true;
-                }
-                else
-                {
-                    for (int i = 0; i < _saveModel.Locations.Count; i++)
-                    {
-                        if (_saveModel.Locations[i].Name != configModel.Locations[i].Name)
-                        {
-                            _saveModel.Locations.Insert(i, ConfigConverter.Instance.ConvertToModel(configModel.Locations[i]));
-                            _saveModel.Locations.RemoveAt(i + 1);
-                            modified = true;
-                        }
-                        else if (_saveModel.Locations[i].Mensas.Count != configModel.Locations[i].Mensas.Count)
-                        {
-                            _saveModel.Locations[i].Mensas = ConfigConverter.Instance.ConvertToModel(configModel.Locations[i].Mensas);
-                            modified = true;
-                        }
-                        else
-                        {
-                            for (int j = 0; j < _saveModel.Locations[i].Mensas.Count; j++)
-                            {
-                                if (_saveModel.Locations[i].Mensas[j].Name != configModel.Locations[i].Mensas[j].Name)
-                                {
-                                    _saveModel.Locations[i].Mensas[j] = ConfigConverter.Instance.ConvertToModel(configModel.Locations[i].Mensas[j]);
-                                    modified = true;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (modified)
                     await Cache();
+                }
 
                 return _saveModel.Locations;
             }
@@ -197,7 +163,12 @@ namespace Famoser.ETHZMensa.Business.Repositories
             }
             return true;
         }
-        
+
+        public Task<bool> SaveState()
+        {
+            return Cache();
+        }
+
         private async Task RefreshTask(ObservableCollection<MensaModel> mensas)
         {
             foreach (var mensaModel in mensas)
@@ -238,7 +209,7 @@ namespace Famoser.ETHZMensa.Business.Repositories
             if (DateTime.Today.DayOfWeek == DayOfWeek.Thursday)
                 return "do";
             if (DateTime.Today.DayOfWeek == DayOfWeek.Friday)
-                return "fr";
+                return "fre";
             if (DateTime.Today.DayOfWeek == DayOfWeek.Saturday)
                 return "sa";
             return "so";

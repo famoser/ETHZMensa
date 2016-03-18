@@ -23,8 +23,13 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal.Pages
             get { return DataContext as MainViewModel; }
         }
 
+        private static bool _firstTime = true;
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            if (!_firstTime)
+                return;
+
+            _firstTime = false;
             if (ViewModel.RefreshCommand.CanExecute(null))
                 ViewModel.RefreshCommand.Execute(null);
         }

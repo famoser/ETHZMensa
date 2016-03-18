@@ -1,5 +1,5 @@
 ﻿{
-  "Version": 2,
+  "Version": 3,
   "Locations": [
     {
       "Name": "Zentrum",
@@ -57,7 +57,7 @@
           "Name": "Restaurant foodLAB",
           "MealTime": "11:00-14:00",
           "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=3&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/rest_cad",
+          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/rest_cab",
           "Type": 0
         },
         {
@@ -178,41 +178,6 @@
           "MealTime": "17:00-19:30",
           "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/irchel-cafeteria-seerose-abend_[DAY_SHORT].html",
           "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-irchel.html",
-          "Type": 2
-        },
-        {
-          "Name": "Binzmühle",
-          "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/mensa-uzh-binzmuehle_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/mensa-uzh-binzmuehle_[DAY_SHORT].html",
-          "Type": 2
-        },
-        {
-          "Name": "Cafeteria Zentrum für Zahnmedizin (ZZM)",
-          "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-zzm_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-zzm_[DAY_SHORT].html",
-          "Type": 2
-        },
-        {
-          "Name": "Cafeteria Tierspital",
-          "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-tierspital_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-tierspital_[DAY_SHORT].html",
-          "Type": 2
-        },
-        {
-          "Name": "Cafeteria Botanischer Garten",
-          "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-botgarten_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-botgarten_[DAY_SHORT].html",
-          "Type": 2
-        },
-        {
-          "Name": "Cafeteria Plattenstrasse",
-          "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-plattenstrasse_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-plattenstrasse_[DAY_SHORT].html",
           "Type": 2
         }
       ]
