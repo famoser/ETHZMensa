@@ -22,6 +22,8 @@ namespace Famoser.ETHZMensa.Business.Repositories
         private IDataService _dataService;
         private IProgressService _progressService;
 
+        private const int MaxConcurrentTasks = 10;
+
         public MensaRespository(IStorageService storageService, IDataService dataService, IProgressService progressService)
         {
             _storageService = storageService;
@@ -136,15 +138,26 @@ namespace Famoser.ETHZMensa.Business.Repositories
         }
 
 
+        private Queue<MensaModel> _refreshModels = new Queue<MensaModel>(); 
         public async Task<bool> Refresh()
         {
+            var successful = true;
             try
             {
-                var list = new List<Task>();
                 _progressService.InitializeProgressBar(_saveModel.Locations.Sum(l => l.Mensas.Count));
+                _refreshModels.Clear();
+                var list = new List<Task>();
                 foreach (var locationModel in _saveModel.Locations)
                 {
-                    list.Add(RefreshTask(locationModel.Mensas));
+                    foreach (var mensaModel in locationModel.Mensas)
+                    {
+                        _refreshModels.Enqueue(mensaModel);
+                    }
+                }
+
+                for (int i = 0; i < MaxConcurrentTasks; i++)
+                {
+                    list.Add(RefreshTask());
                 }
 
                 foreach (var task in list)
@@ -153,15 +166,18 @@ namespace Famoser.ETHZMensa.Business.Repositories
                         await task;
                 }
 
-                await Cache();
-                _progressService.HideProgress();
             }
             catch (Exception ex)
             {
                 LogHelper.Instance.LogException(ex);
-                return false;
+                successful = false;
             }
-            return true;
+            finally
+            {
+                await Cache();
+                _progressService.HideProgress();
+            }
+            return successful;
         }
 
         public Task<bool> SaveState()
@@ -169,10 +185,11 @@ namespace Famoser.ETHZMensa.Business.Repositories
             return Cache();
         }
 
-        private async Task RefreshTask(ObservableCollection<MensaModel> mensas)
+        private async Task RefreshTask()
         {
-            foreach (var mensaModel in mensas)
+            while (_refreshModels.Count > 0)
             {
+                var mensaModel = _refreshModels.Dequeue();
                 if (mensaModel.Type == LocationType.Uzh)
                     mensaModel.TodayUrl = new Uri(mensaModel.LogicUrl.AbsoluteUri.Replace("[DAY_SHORT]", GetTodayShortDay()));
                 else

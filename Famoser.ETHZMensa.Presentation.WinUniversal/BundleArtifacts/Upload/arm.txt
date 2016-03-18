@@ -1,5 +1,5 @@
-MainPackage=D:\Repos\Famoser.ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Upload\Famoser.ETHZMensa.Presentation.WinUniversal_1.1.4.0_ARM.appx
-SymbolPackage=D:\Repos\Famoser.ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\AppPackages\Famoser.ETHZMensa.Presentation.WinUniversal_1.1.4.0\Famoser.ETHZMensa.Presentation.WinUniversal_1.1.4.0_ARM.appxsym
+MainPackage=D:\Repos\Famoser.ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Upload\Famoser.ETHZMensa.Presentation.WinUniversal_1.2.7.0_ARM.appx
+SymbolPackage=D:\Repos\Famoser.ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\AppPackages\Famoser.ETHZMensa.Presentation.WinUniversal_1.2.7.0\Famoser.ETHZMensa.Presentation.WinUniversal_1.2.7.0_ARM.appxsym
 ResourcePack=D:\Repos\Famoser.ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\_scale-100.appx
 ResourcePack=D:\Repos\Famoser.ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\_scale-125.appx
 ResourcePack=D:\Repos\Famoser.ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\_scale-150.appx
