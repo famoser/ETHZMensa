@@ -82,6 +82,21 @@ namespace Famoser.ETHZMensa.Business.Repositories
             return _saveModel.Locations;
         }
 
+        private LocationModel _favorites;
+        public LocationModel GetFavorites()
+        {
+            if (_favorites == null)
+            {
+                _favorites = new LocationModel()
+                {
+                    Name = "Favorites",
+                    Mensas =
+                        new ObservableCollection<MensaModel>(_saveModel.Locations.SelectMany(s => s.Mensas.Where(m => m.IsFavorite)))
+                };
+            }
+            return _favorites;
+        }
+
         public ObservableCollection<LocationModel> GetExampleLocations()
         {
             return new ObservableCollection<LocationModel>()

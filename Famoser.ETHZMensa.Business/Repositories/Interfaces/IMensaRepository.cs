@@ -12,6 +12,7 @@ namespace Famoser.ETHZMensa.Business.Repositories.Interfaces
     public interface IMensaRepository
     {
         Task<ObservableCollection<LocationModel>> GetLocations();
+        LocationModel GetFavorites();
         ObservableCollection<LocationModel> GetExampleLocations();
 
         Task<bool> Refresh();

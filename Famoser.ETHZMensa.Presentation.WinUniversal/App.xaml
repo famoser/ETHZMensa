@@ -11,10 +11,11 @@
 
             <viewModel:ViewModelLocator x:Key="Locator" />
             
-<converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+            <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
             <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
             <converters:DateTimeToStringConverter x:Key="DateTimeToStringConverter" />
             <converters:FavoriteToSymbolConverter x:Key="FavoriteToSymbolConverter" />
+            <converters:IntToVisibilityConverter x:Key="IntToVisibilityConverter" />
 
             <Style x:Key="StretchListViewItemStyle" TargetType="ListViewItem">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />

@@ -49,6 +49,12 @@ namespace Famoser.ETHZMensa.View.ViewModel
         private async void Initialize()
         {
             Locations = await _mensaRepository.GetLocations();
+            Favorites = _mensaRepository.GetFavorites();
+            if (Favorites.Mensas.Count > 0)
+                SelectedLocation = Favorites;
+            else
+                SelectedLocation = _locations.FirstOrDefault();
+
             _initialized = true;
             if (_refreshRequested)
             {
@@ -61,11 +67,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
         public ObservableCollection<LocationModel> Locations
         {
             get { return _locations; }
-            set
-            {
-                if (Set(ref _locations, value))
-                    SelectedLocation = _locations.FirstOrDefault();
-            }
+            set { Set(ref _locations, value); }
         }
 
         private LocationModel _selectedLocation;
@@ -73,6 +75,13 @@ namespace Famoser.ETHZMensa.View.ViewModel
         {
             get { return _selectedLocation; }
             set { Set(ref _selectedLocation, value); }
+        }
+
+        private LocationModel _favorites;
+        public LocationModel Favorites
+        {
+            get { return _favorites; }
+            set { Set(ref _favorites, value); }
         }
 
         private readonly RelayCommand _refreshCommand;

@@ -50,5 +50,11 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal.Pages
         {
             UIElement_OnTapped();
         }
+
+        private void Favorites_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            ViewModel.SelectedLocation = ViewModel.Favorites;
+            UIElement_OnTapped();
+        }
     }
 }

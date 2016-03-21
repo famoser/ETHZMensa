@@ -63,6 +63,13 @@ namespace Famoser.ETHZMensa.View.ViewModel
             _toggleFavorite.RaiseCanExecuteChanged();
 
             Mensa.IsFavorite = !Mensa.IsFavorite;
+            var favs = _mensaRepository.GetFavorites();
+            if (favs.Mensas.Contains(Mensa))
+                favs.Mensas.Remove(Mensa);
+
+            if (Mensa.IsFavorite)
+                favs.Mensas.Insert(0, Mensa);
+
             await _mensaRepository.SaveState();
 
             _isTogglingFavorite = false;
