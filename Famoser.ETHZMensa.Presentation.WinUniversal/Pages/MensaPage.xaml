@@ -5,11 +5,25 @@
     xmlns:local="using:Famoser.ETHZMensa.Presentation.WinUniversal.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:actions="using:Famoser.ETHZMensa.Presentation.WinUniversal.Actions"
     mc:Ignorable="d" 
     DataContext="{Binding MensaViewModel, Source={StaticResource Locator}}">
     <Page.Resources>
         <DataTemplate x:Key="MenuDataTemplate">
             <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="Holding">
+                        <actions:OpenMenuFlyoutAction />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+                <FlyoutBase.AttachedFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="copy to clipboard" 
+                         Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding }" />
+                    </MenuFlyout>
+                </FlyoutBase.AttachedFlyout>
                 <StackPanel>
                     <TextBlock Style="{StaticResource BigTexBlock}" Padding="10,10,10,0" Text="{Binding Title}" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}" />
                     <TextBlock Style="{StaticResource SecondaryBigTexBlock}" Typography.Capitals="SmallCaps"  Text="{Binding MenuName}" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}" />

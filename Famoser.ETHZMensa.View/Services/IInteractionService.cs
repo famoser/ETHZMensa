@@ -10,5 +10,6 @@ namespace Famoser.ETHZMensa.View.Services
     {
         void OpenInBrowser(Uri uri);
         void CheckBeginInvokeOnUi(Action action);
+        void CopyToClipboard(string richText);
     }
 }

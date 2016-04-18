@@ -5,7 +5,6 @@ using Famoser.ETHZMensa.Data.Services;
 using Famoser.ETHZMensa.Presentation.WinUniversal.Services;
 using Famoser.ETHZMensa.Test.Setup.Services;
 using Famoser.ETHZMensa.View.Services;
-using Famoser.ETHZMensa.View.ViewModel;
 using Famoser.FrameworkEssentials.Singleton;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;

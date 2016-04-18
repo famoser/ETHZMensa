@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Famoser.ETHZMensa.Business.Models;
 using Famoser.ETHZMensa.Business.Repositories.Interfaces;
@@ -25,6 +21,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
             _mensaRepository = mensaRepository;
             _openInBrowser = new RelayCommand<Uri>(OpenInBrowser);
             _toggleFavorite = new RelayCommand(ToggleFavorite, () => CanExecuteToggleFavoriteCommand);
+            _copyToClipboard = new RelayCommand<object>(CopyToClipboard, (e) => CanExecuteCopyToClipboardCommand);
 
             Messenger.Default.Register<MensaModel>(this, Messages.Select, EvaluateSelect);
 
@@ -74,6 +71,37 @@ namespace Famoser.ETHZMensa.View.ViewModel
 
             _isTogglingFavorite = false;
             _toggleFavorite.RaiseCanExecuteChanged();
+        }
+
+        private readonly RelayCommand<object> _copyToClipboard;
+        public ICommand CopyToClipboardCommand => _copyToClipboard;
+        private bool CanExecuteCopyToClipboardCommand => true;
+        private async void CopyToClipboard(object obj)
+        {
+            if (obj is MensaModel)
+            {
+                var mensa = (MensaModel) obj;
+                _interactionService.CopyToClipboard(MensaToText(mensa));
+            } else if (obj is MenuModel)
+            {
+                var menu = (MenuModel) obj;
+                _interactionService.CopyToClipboard(MenuToText(menu));
+            }
+        }
+
+        private string MensaToText(MensaModel mensa)
+        {
+            var str = "Menu of " + mensa.Name + " at " + mensa.LastTimeRefreshed.ToString("dd.mm.") + "\n\n";
+            foreach (var menuModel in mensa.Menus)
+            {
+                str += MenuToText(menuModel) + "\n\n";
+            }
+            return str;
+        }
+
+        private string MenuToText(MenuModel menu)
+        {
+            return menu.Title + "\n" + menu.MenuName + "\n\n" + menu.Description + "\n";
         }
     }
 }

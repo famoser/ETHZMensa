@@ -16,7 +16,6 @@ using Famoser.ETHZMensa.Business.Repositories;
 using Famoser.ETHZMensa.Business.Repositories.Interfaces;
 using Famoser.ETHZMensa.Business.Services;
 using Famoser.ETHZMensa.Data.Services;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
