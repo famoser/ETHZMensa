@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Famoser.ETHZMensa.Business.Models;
+using Famoser.ETHZMensa.View.ViewModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,6 +28,27 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal.Pages
         public MensaPage()
         {
             this.InitializeComponent();
+        }
+
+        private MensaViewModel ViewModel => DataContext as MensaViewModel;
+
+        private void Mensa_Holding(object sender, HoldingRoutedEventArgs e)
+        {
+            ShowFlyout(sender as Grid);
+        }
+
+        private void UIElement_OnRightTapped(object sender, RightTappedRoutedEventArgs e)
+        {
+            ShowFlyout(sender as Grid);
+        }
+
+        private void ShowFlyout(Grid grid)
+        {
+            if (grid != null)
+            {
+                FlyoutBase flyoutBase = FlyoutBase.GetAttachedFlyout(grid);
+                flyoutBase.ShowAt(grid);
+            }
         }
     }
 }

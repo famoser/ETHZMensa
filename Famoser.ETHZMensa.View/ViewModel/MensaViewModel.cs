@@ -76,32 +76,39 @@ namespace Famoser.ETHZMensa.View.ViewModel
         private readonly RelayCommand<object> _copyToClipboard;
         public ICommand CopyToClipboardCommand => _copyToClipboard;
         private bool CanExecuteCopyToClipboardCommand => true;
-        private async void CopyToClipboard(object obj)
+        private void CopyToClipboard(object obj)
         {
             if (obj is MensaModel)
             {
-                var mensa = (MensaModel) obj;
+                var mensa = (MensaModel)obj;
                 _interactionService.CopyToClipboard(MensaToText(mensa));
-            } else if (obj is MenuModel)
+            }
+            else if (obj is MenuModel)
             {
-                var menu = (MenuModel) obj;
-                _interactionService.CopyToClipboard(MenuToText(menu));
+                var menu = (MenuModel)obj;
+                _interactionService.CopyToClipboard(MenuToText(menu, Mensa));
             }
         }
 
+        private string _divider = "-------";
         private string MensaToText(MensaModel mensa)
         {
-            var str = "Menu of " + mensa.Name + " at " + mensa.LastTimeRefreshed.ToString("dd.mm.") + "\n\n";
+            var str = GetHeader(mensa);
             foreach (var menuModel in mensa.Menus)
             {
-                str += MenuToText(menuModel) + "\n\n";
+                str += MenuToText(menuModel, mensa, false) + _divider + "\n";
             }
             return str;
         }
 
-        private string MenuToText(MenuModel menu)
+        private string MenuToText(MenuModel menu, MensaModel mensa, bool showHeader = true)
         {
-            return menu.Title + "\n" + menu.MenuName + "\n\n" + menu.Description + "\n";
+            return (showHeader ? GetHeader(mensa) : "") + menu.Title + "\n" + menu.MenuName + "\n\n" + menu.Description + "\n";
+        }
+
+        private string GetHeader(MensaModel mensa)
+        {
+            return mensa.Name + ", " + mensa.LastTimeRefreshed.ToString("dd.MM.") + "\n" + _divider + "\n";
         }
     }
 }
