@@ -1,5 +1,5 @@
 ﻿{
-  "Version": 3,
+  "Version": 4,
   "Locations": [
     {
       "Name": "Zentrum",
@@ -7,64 +7,57 @@
         {
           "Name": "Clausiusbar",
           "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=13&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/clausiusbar",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/4/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/clausiusbar",
           "Type": 0
         },
         {
           "Name": "Dozentenfoyer",
           "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=4&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/dozfoyer",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/6/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/dozfoyer",
           "Type": 0
         },
         {
           "Name": "Foodtrailer",
           "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=9&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/foodtrailer_etz",
-          "Type": 0
-        },
-        {
-          "Name": "G-ESSbar",
-          "MealTime": "11:00-13:30",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=6&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/infbar",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/9/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/foodtrailer_etz",
           "Type": 0
         },
         {
           "Name": "Mensa Polyterrasse",
           "MealTime": "11:00-13:30",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=11&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/mensa",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/12/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/mensa",
           "Type": 0
         },
         {
           "Name": "Mensa Polyterrasse - Abendessen",
           "MealTime": "17:30-19:30",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=11&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/mensa",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/12/de/menus/daily/[DAY_DATE]/dinner?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/mensa",
           "Type": 1
         },
         {
           "Name": "Polysnack",
           "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=5&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/snack",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/13/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/snack",
           "Type": 0
         },
         {
           "Name": "Restaurant foodLAB",
           "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=3&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/rest_cab",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/8/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/rest_cab",
           "Type": 0
         },
         {
           "Name": "Tannenbar",
           "MealTime": "11:00-13:30",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=12&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/eth_zentrum/tannenbar",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/14/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/tannenbar",
           "Type": 0
         }
       ]
@@ -75,43 +68,50 @@
         {
           "Name": "Alumni quattro Lounge",
           "MealTime": "11:00-21:00",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=7&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/15/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/alumni_lounge",
           "Type": 0
         },
         {
-          "Name": "Bistro",
-          "MealTime": "07:30-19:00",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=15&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/bistro",
+          "Name": "food market - green day",
+          "MealTime": "11:00-16:00",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/19/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/food-market-green-day",
+          "Type": 0
+        },
+        {
+          "Name": "food market - grill bbQ",
+          "MealTime": "11:00-16:00",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/20/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/food-market-grill-bbq",
+          "Type": 0
+        },
+        {
+          "Name": "food market - pizza pasta day",
+          "MealTime": "11:00-16:00",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/18/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/food-market-pizza-pasta",
           "Type": 0
         },
         {
           "Name": "FUSION coffee",
           "MealTime": "17:30-19:00",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=8&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/22/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/alumni_lounge",
           "Type": 0
         },
         {
           "Name": "FUSION meal",
           "MealTime": "11:00-14:00",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=2&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge",
-          "Type": 0
-        },
-        {
-          "Name": "Hexagon",
-          "MealTime": "11:15-13:30",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=21&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/21/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/alumni_lounge",
           "Type": 0
         },
         {
           "Name": "WOKA",
           "MealTime": "10:45-14:15",
-          "LogicUrl": "http://www.gastro.ethz.ch/menuela_overview?viewType=daily&facility=19&language=DE",
-          "InfoUrl": "http://www.gastro.ethz.ch/locations/hberg/alumni_lounge",
+          "LogicUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/23/de/menus/daily/[DAY_DATE]/lunch?language=de",
+          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/alumni_lounge",
           "Type": 0
         }
       ]

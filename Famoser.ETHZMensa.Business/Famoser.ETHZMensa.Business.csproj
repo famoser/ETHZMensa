@@ -48,6 +48,14 @@
     <Compile Include="Models\ConfigModels\ConfigModel.cs" />
     <Compile Include="Models\ConfigModels\LocationConfigModel.cs" />
     <Compile Include="Models\ConfigModels\MensaConfigModel.cs" />
+    <Compile Include="Models\Eth\Allergen.cs" />
+    <Compile Include="Models\Eth\Opening.cs" />
+    <Compile Include="Models\Eth\Hours.cs" />
+    <Compile Include="Models\Eth\Meal.cs" />
+    <Compile Include="Models\Eth\Mealtime.cs" />
+    <Compile Include="Models\Eth\Menu.cs" />
+    <Compile Include="Models\Eth\Prices.cs" />
+    <Compile Include="Models\Eth\RootObject.cs" />
     <Compile Include="Models\LocationModel.cs" />
     <Compile Include="Models\MensaModel.cs" />
     <Compile Include="Models\MenuModel.cs" />

@@ -59,7 +59,7 @@ namespace Famoser.ETHZMensa.Business.Repositories
                 var configModel = JsonConvert.DeserializeObject<ConfigModel>(config);
                 if (configModel == null)
                     return _saveModel.Locations;
-                
+
                 if (_saveModel.Version != configModel.Version)
                 {
                     _saveModel.Version = configModel.Version;
@@ -153,7 +153,7 @@ namespace Famoser.ETHZMensa.Business.Repositories
         }
 
 
-        private Queue<MensaModel> _refreshModels = new Queue<MensaModel>(); 
+        private Queue<MensaModel> _refreshModels = new Queue<MensaModel>();
         public async Task<bool> Refresh()
         {
             var successful = true;
@@ -207,10 +207,12 @@ namespace Famoser.ETHZMensa.Business.Repositories
                 var mensaModel = _refreshModels.Dequeue();
                 if (mensaModel.Type == LocationType.Uzh)
                     mensaModel.TodayUrl = new Uri(mensaModel.LogicUrl.AbsoluteUri.Replace("[DAY_SHORT]", GetTodayShortDay()));
+                else if (mensaModel.Type == LocationType.Eth || mensaModel.Type == LocationType.EthAbendessen)
+                    mensaModel.TodayUrl =
+                        new Uri(mensaModel.LogicUrl.AbsoluteUri.Replace("[DAY_DATE]",
+                            DateTime.Now.ToString("yyyy-MM-dd")));
                 else
-                {
                     mensaModel.TodayUrl = mensaModel.LogicUrl;
-                }
 
                 var html = await _dataService.GetHtml(mensaModel.TodayUrl);
                 if (html != null)

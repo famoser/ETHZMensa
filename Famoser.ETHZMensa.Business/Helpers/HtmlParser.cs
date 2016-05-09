@@ -5,8 +5,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Famoser.ETHZMensa.Business.Models;
+using Famoser.ETHZMensa.Business.Models.Eth;
 using Famoser.FrameworkEssentials.Logging;
 using Famoser.FrameworkEssentials.Singleton;
+using Newtonsoft.Json;
 
 namespace Famoser.ETHZMensa.Business.Helpers
 {
@@ -16,39 +18,19 @@ namespace Famoser.ETHZMensa.Business.Helpers
         {
             try
             {
-                if (!html.Contains("<table class=\"silvatable grid\""))
-                    return false;
-
-                html = html.Substring(html.IndexOf("<table class=\"silvatable grid\"", StringComparison.Ordinal));
-                html = html.Substring(0, html.IndexOf("</table>", StringComparison.Ordinal));
-
-                var entries = html.Split(new[] { "<tr>" }, StringSplitOptions.None);
+                var obj = JsonConvert.DeserializeObject<RootObject>(html);
                 mensa.Menus.Clear();
-                for (int i = 2; i < entries.Length; i++)
+                foreach (var meal in obj.menu.meals)
                 {
-                    var columns = entries[i].Split(new[] { "<td>" }, StringSplitOptions.None);
-
-                    var menu = new MenuModel();
-                    menu.MenuName = columns[1].Substring(3);
-                    menu.MenuName = menu.MenuName.Substring(0, menu.MenuName.IndexOf("</b>", StringComparison.Ordinal)).Trim();
-
-                    if (columns[2].Contains("<br/>"))
+                    var menu = new MenuModel
                     {
-                        menu.Title =
-                            columns[2].Substring(0, columns[2].IndexOf("<br/>", StringComparison.Ordinal)).Trim();
-
-                        columns[2] = columns[2].Substring(columns[2].IndexOf("<br/>", StringComparison.Ordinal) + 5);
-                        menu.Description = columns[2].Substring(0, columns[2].IndexOf("</td>", StringComparison.Ordinal));
-                        menu.Description = menu.Description.Replace("<br/>", "\n");
-                    }
-                    else
-                    {
-                        menu.Title = columns[2].Substring(0, columns[2].IndexOf("</td>", StringComparison.Ordinal));
-                    }
-                    if (columns[3].Contains("<br />"))
-                    {
-                        menu.Prices = columns[3].Substring(0, columns[3].IndexOf("<br />", StringComparison.Ordinal));
-                    }
+                        MenuName = meal.label,
+                        MenuType = meal.type,
+                        Prices = meal.prices.student + " / " + meal.prices.staff + " / " + meal.prices.@extern,
+                        Title = meal.description.FirstOrDefault()
+                    };
+                    if (meal.description.Count > 1)
+                        menu.Description = string.Join("\n", meal.description.GetRange(1, meal.description.Count - 1));
 
                     mensa.Menus.Add(menu);
                 }
@@ -91,7 +73,7 @@ namespace Famoser.ETHZMensa.Business.Helpers
 
                 var entries = html.Split(new[] { "<h3>" }, StringSplitOptions.None);
                 mensa.Menus.Clear();
-                
+
 
                 for (int i = 1; i < entries.Length; i++)
                 {
