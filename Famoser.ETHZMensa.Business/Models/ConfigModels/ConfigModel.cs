@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Famoser.ETHZMensa.Business.Models.ConfigModels
 {
-    public class ConfigModel
+    internal class ConfigModel
     {
         public List<LocationConfigModel> Locations { get; set; }
         public int Version { get; set; }
+        public LinkModel Links { get; set; }
     }
 }

@@ -16,11 +16,14 @@ namespace Famoser.ETHZMensa.Business.Helpers
         {
             return new MensaModel()
             {
-                InfoUrl = new Uri(config.InfoUrl),
                 Name = config.Name,
                 MealTime = config.MealTime,
-                ApiUrl = new Uri(config.LogicUrl),
-                Type =  config.Type
+                Type =  config.Type,
+                ApiUrlSlug = config.ApiUrlSlug,
+                InfoUrlSlug = config.InfoUrlSlug,
+                IdSlug = config.IdSlug,
+                TimeSlug = config.TimeSlug,
+                InfoDayDependent = config.InfoDayDependent
             };
         }
 

@@ -205,14 +205,6 @@ namespace Famoser.ETHZMensa.Business.Repositories
             while (_refreshModels.Count > 0)
             {
                 var mensaModel = _refreshModels.Dequeue();
-                if (mensaModel.Type == LocationType.Uzh)
-                    mensaModel.TodayApiUrl = new Uri(mensaModel.ApiUrl.AbsoluteUri.Replace("[DAY_SHORT]", GetTodayShortDay()));
-                else if (mensaModel.Type == LocationType.Eth || mensaModel.Type == LocationType.EthAbendessen)
-                    mensaModel.TodayApiUrl =
-                        new Uri(mensaModel.ApiUrl.AbsoluteUri.Replace("[DAY_DATE]",
-                            DateTime.Now.ToString("yyyy-MM-dd")));
-                else
-                    mensaModel.TodayApiUrl = mensaModel.ApiUrl;
 
                 var html = await _dataService.GetHtml(mensaModel.TodayApiUrl);
                 if (html != null)
@@ -220,33 +212,14 @@ namespace Famoser.ETHZMensa.Business.Repositories
                     bool res = false;
                     if (mensaModel.Type == LocationType.Eth)
                         res = HtmlParser.Instance.ParseEthHtml(html, mensaModel);
-                    else if (mensaModel.Type == LocationType.EthAbendessen)
-                        res = HtmlParser.Instance.ParseEthAbendessenHtml(html, mensaModel);
                     else if (mensaModel.Type == LocationType.Uzh)
                         res = HtmlParser.Instance.ParseUzhHtml(html, mensaModel);
-                    if (res)
+                    if (res && mensaModel.Menus.Any())
                         mensaModel.LastTimeRefreshed = DateTime.Now;
                 }
 
                 _progressService.IncrementProgress();
             }
-        }
-
-        private string GetTodayShortDay()
-        {
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
-                return "mo";
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
-                return "di";
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Wednesday)
-                return "mi";
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Thursday)
-                return "do";
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Friday)
-                return "fre";
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Saturday)
-                return "sa";
-            return "so";
         }
 
         private async Task<bool> Cache()

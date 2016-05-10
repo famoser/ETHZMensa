@@ -1,5 +1,5 @@
 ﻿{
-  "Version": 4,
+  "Version": 8,
   "Locations": [
     {
       "Name": "Zentrum",
@@ -7,58 +7,66 @@
         {
           "Name": "Clausiusbar",
           "MealTime": "11:00-14:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/4/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/clausiusbar",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 4,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "zentrum/clausiusbar"
         },
         {
           "Name": "Dozentenfoyer",
           "MealTime": "11:00-14:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/6/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/dozfoyer",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 6,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "zentrum/dozentenfoyer"
         },
         {
           "Name": "Foodtrailer",
           "MealTime": "11:00-14:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/9/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/foodtrailer_etz",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 9,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "zentrum/foodtrailer-etz"
         },
         {
           "Name": "Mensa Polyterrasse",
           "MealTime": "11:00-13:30",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/12/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/mensa",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 12,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "zentrum/mensa-polyterrasse"
         },
         {
           "Name": "Mensa Polyterrasse - Abendessen",
           "MealTime": "17:30-19:30",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/12/de/menus/daily/[DAY_DATE]/dinner?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/mensa",
-          "Type": 1
+          "Type": 1,
+          "IdSlug": 12,
+          "TimeSlug": "dinner",
+          "InfoUrlSlug": "zentrum/mensa-polyterrasse"
         },
         {
           "Name": "Polysnack",
           "MealTime": "11:00-14:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/13/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/snack",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 13,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "zentrum/polysnack"
         },
         {
           "Name": "Restaurant foodLAB",
           "MealTime": "11:00-14:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/8/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/rest_cab",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 8,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "zentrum/foodlab"
         },
         {
           "Name": "Tannenbar",
           "MealTime": "11:00-13:30",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/14/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/zentrum/tannenbar",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 14,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "zentrum/tannenbar"
         }
       ]
     },
@@ -68,51 +76,58 @@
         {
           "Name": "Alumni quattro Lounge",
           "MealTime": "11:00-21:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/15/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/alumni_lounge",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 15,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "hoenggerberg/alumni-quattro-lounge"
         },
         {
           "Name": "food market - green day",
           "MealTime": "11:00-16:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/19/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/food-market-green-day",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 19,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "hoenggerberg/food-market-green-day"
         },
         {
           "Name": "food market - grill bbQ",
           "MealTime": "11:00-16:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/20/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/food-market-grill-bbq",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 20,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "hoenggerberg/food-market-grill-bbq"
         },
         {
           "Name": "food market - pizza pasta day",
           "MealTime": "11:00-16:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/18/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/food-market-pizza-pasta",
-          "Type": 0
-        },
-        {
-          "Name": "FUSION coffee",
-          "MealTime": "17:30-19:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/22/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/alumni_lounge",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 18,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "hoenggerberg/food-market-pizza-pasta"
         },
         {
           "Name": "FUSION meal",
           "MealTime": "11:00-14:00",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/21/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/alumni_lounge",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 21,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "hoenggerberg/fusion-meal"
+        },
+        {
+          "Name": "FUSION coffee",
+          "MealTime": "17:30-19:00",
+          "Type": 1,
+          "IdSlug": 22,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "hoenggerberg/fusion-coffee"
         },
         {
           "Name": "WOKA",
           "MealTime": "10:45-14:15",
-          "ApiUrl": "https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/mensas/23/de/menus/daily/[DAY_DATE]/lunch?language=de",
-          "InfoUrl": "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/hoenggerberg/alumni_lounge",
-          "Type": 0
+          "Type": 1,
+          "IdSlug": 23,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "hoenggerberg/woka"
         }
       ]
     },
@@ -122,37 +137,41 @@
         {
           "Name": "Untere Mensa A",
           "MealTime": "11:00-14:30",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/zentrum-a_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-zentrum_di.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "zentrum-a",
+          "InfoUrlSlug": "mensa-uzh-zentrum",
+          "InfoDayDependent": true
         },
         {
           "Name": "Untere Mensa A - Abendessen",
           "MealTime": "17:00-19:30",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/zentrum-a-abend_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-zentrum_di.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "zentrum-a-abend",
+          "InfoUrlSlug": "mensa-uzh-zentrum",
+          "InfoDayDependent": true
         },
         {
           "Name": "Obere Mensa B",
           "MealTime": "11:00-14:30",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/zentrum-b_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-zentrum_di.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "zentrum-b",
+          "InfoUrlSlug": "mensa-uzh-zentrum",
+          "InfoDayDependent": true
         },
         {
           "Name": "Lichthof Rondell",
           "MealTime": "11:00-14:00",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/lichthof-rondell_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/menueplaene/lichthof-rondell_di.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "lichthof-rondell",
+          "InfoUrlSlug": "mensa-uzh-zentrum",
+          "InfoDayDependent": true
         },
         {
           "Name": "Rämi 59",
           "MealTime": "11:00-14:00",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/raemi59_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/raemi59.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "raemi59",
+          "InfoUrlSlug": "raemi59"
         }
       ]
     },
@@ -162,23 +181,23 @@
         {
           "Name": "Irchel",
           "MealTime": "11:00-14:00",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/mensa-uzh-irchel_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-irchel.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "mensa-uzh-irchel",
+          "InfoUrlSlug": "mensa-uzh-irchel"
         },
         {
           "Name": "Cafeteria Irchel Atrium",
           "MealTime": "11:00-14:00",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/irchel-cafeteria-atrium_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-irchel.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "irchel-cafeteria-atrium",
+          "InfoUrlSlug": "mensa-uzh-irchel"
         },
         {
           "Name": "Cafeteria Irchel Seerose - Abendessen",
           "MealTime": "17:00-19:30",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/irchel-cafeteria-seerose-abend_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-irchel.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "irchel-cafeteria-seerose-abend",
+          "InfoUrlSlug": "mensa-uzh-irchel"
         }
       ]
     },
@@ -188,37 +207,37 @@
         {
           "Name": "Binzmühle",
           "MealTime": "11:15-14:00",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/mensa-uzh-binzmuehle_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/mensa-uzh-binzmuehle.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "mensa-uzh-binzmuehle",
+          "InfoUrlSlug": "mensa-uzh-binzmuehle"
         },
         {
           "Name": "Cafeteria Zentrum für Zahnmedizin (ZZM)",
           "MealTime": "07:00-17:00",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-zzm_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/cafeteria-uzh-zzm.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "cafeteria-zzm",
+          "InfoUrlSlug": "cafeteria-uzh-zzm"
         },
         {
           "Name": "Cafeteria Tierspital",
           "MealTime": "07.00-16:30",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-tierspital_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/cafeteria-uzh-tierspital.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "cafeteria-uzh-tierspital",
+          "InfoUrlSlug": "cafeteria-uzh-tierspital"
         },
         {
           "Name": "Cafeteria Botanischer Garten",
           "MealTime": "09:00-17:00",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-botgarten_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/cafeteria-uzh-botgarten.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "cafeteria-uzh-botgarten",
+          "InfoUrlSlug": "cafeteria-uzh-botgarten"
         },
         {
           "Name": "Cafeteria Plattenstrasse",
           "MealTime": "07:00-16:30",
-          "ApiUrl": "http://www.mensa.uzh.ch/menueplaene/cafeteria-uzh-plattenstrasse_[DAY_SHORT].html",
-          "InfoUrl": "http://www.mensa.uzh.ch/standorte/cafeteria-uzh-plattenstrasse.html",
-          "Type": 2
+          "Type": 2,
+          "ApiUrlSlug": "cafeteria-uzh-plattenstrasse",
+          "InfoUrlSlug": "cafeteria-uzh-plattenstrasse"
         }
       ]
     }

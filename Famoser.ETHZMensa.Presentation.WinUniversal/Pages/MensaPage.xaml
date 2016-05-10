@@ -59,7 +59,7 @@
                     <Run Text="Mehr Informationen" />
                 </Hyperlink>
                 <Run Text=" / " />
-                <Hyperlink NavigateUri="{Binding Mensa.TodayApiUrl}">
+                <Hyperlink NavigateUri="{Binding Mensa.TodayMenuUrl}">
                     <Run Text="Detailierter Menuplan" />
                 </Hyperlink>
         </TextBlock>

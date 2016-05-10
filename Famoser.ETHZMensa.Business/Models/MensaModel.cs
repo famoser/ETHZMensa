@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Famoser.ETHZMensa.Business.Enums;
+using Famoser.ETHZMensa.Business.Helpers;
 using Famoser.ETHZMensa.Business.Models.Base;
 
 namespace Famoser.ETHZMensa.Business.Models
@@ -16,12 +17,20 @@ namespace Famoser.ETHZMensa.Business.Models
             Menus = new ObservableCollection<MenuModel>();
         }
 
+        /* start deserialized properties */
         public string Name { get; set; }
         public string MealTime { get; set; }
+        public string IdSlug { get; set; }
+        public string TimeSlug { get; set; }
+        public string ApiUrlSlug { get; set; }
+        public string InfoUrlSlug { get; set; }
+        public bool InfoDayDependent { get; set; }
+        public LocationType Type { get; set; }
+        /* end deserialized properties */
 
-        public Uri TodayApiUrl { get; set; }
-        public Uri ApiUrl { get; set; }
-        public Uri InfoUrl { get; set; }
+        public Uri TodayApiUrl => UriHelper.GetTodayApiUrl(this);
+        public Uri TodayMenuUrl => UriHelper.GetTodayMenuUrl(this);
+        public Uri InfoUrl => UriHelper.GetInfoUrl(this);
 
         private DateTime _lastTimeRefreshed;
         public DateTime LastTimeRefreshed
@@ -36,8 +45,6 @@ namespace Famoser.ETHZMensa.Business.Models
             get { return _isFavorite; }
             set { Set(ref _isFavorite, value); }
         }
-
-        public LocationType Type { get; set; }
 
         public ObservableCollection<MenuModel> Menus { get; set; }
     }

@@ -8,8 +8,7 @@ namespace Famoser.ETHZMensa.Business.Enums
 {
     public enum LocationType
     {
-        Eth = 0,
-        EthAbendessen = 1,
+        Eth = 1,
         Uzh = 2
     }
 }

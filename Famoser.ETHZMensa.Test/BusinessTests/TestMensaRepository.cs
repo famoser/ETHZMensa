@@ -32,17 +32,17 @@ namespace Famoser.ETHZMensa.Test.BusinessTests
             //get json & deserialize
             var json = await ss.GetCachedData();
             var saveModel = JsonConvert.DeserializeObject<SaveModel>(json);
-            var excludes = new string[] { "Bistro"};
+            var excludes = new[] { "Bistro", "FUSION coffee", "Cafeteria Zentrum für Zahnmedizin (ZZM)", "Cafeteria Irchel Seerose - Abendessen" };
 
             foreach (var locationModel in saveModel.Locations)
             {
                 foreach (var mensaModel in locationModel.Mensas)
                 {
                     if (excludes.All(e => e != mensaModel.Name))
-                    Assert.IsTrue(mensaModel.Menus.Count > 0, "Menus of Mensa " + JsonConvert.SerializeObject(mensaModel) + " empty");
-
-                    var html = await dataService.GetHtml(mensaModel.TodayApiUrl);
-                    Assert.IsNotNull(html, "TodayApiUrl of Mensa " + JsonConvert.SerializeObject(mensaModel) + " invalid");
+                        Assert.IsTrue(mensaModel.Menus.Count > 0, "Menus of Mensa empty: " + mensaModel.Name);
+                    
+                    var html = await dataService.GetHtml(mensaModel.TodayMenuUrl);
+                    Assert.IsNotNull(html, "TodayMenuUrl of Mensa " + JsonConvert.SerializeObject(mensaModel) + " invalid");
 
                     html = await dataService.GetHtml(mensaModel.InfoUrl);
                     Assert.IsNotNull(html, "InfoUrl of Mensa " + JsonConvert.SerializeObject(mensaModel) + " invalid");

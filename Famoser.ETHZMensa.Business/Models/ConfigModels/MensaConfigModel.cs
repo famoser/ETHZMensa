@@ -9,12 +9,13 @@ namespace Famoser.ETHZMensa.Business.Models.ConfigModels
 {
     public class MensaConfigModel
     {
-        public LocationType Type { get; set; }
-
         public string Name { get; set; }
         public string MealTime { get; set; }
-        
-        public string InfoUrl { get; set; }
-        public string LogicUrl { get; set; }
+        public string IdSlug { get; set; }
+        public string TimeSlug { get; set; }
+        public string ApiUrlSlug { get; set; }
+        public string InfoUrlSlug { get; set; }
+        public bool InfoDayDependent { get; set; }
+        public LocationType Type { get; set; }
     }
 }
