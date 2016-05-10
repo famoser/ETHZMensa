@@ -206,15 +206,15 @@ namespace Famoser.ETHZMensa.Business.Repositories
             {
                 var mensaModel = _refreshModels.Dequeue();
                 if (mensaModel.Type == LocationType.Uzh)
-                    mensaModel.TodayUrl = new Uri(mensaModel.LogicUrl.AbsoluteUri.Replace("[DAY_SHORT]", GetTodayShortDay()));
+                    mensaModel.TodayApiUrl = new Uri(mensaModel.ApiUrl.AbsoluteUri.Replace("[DAY_SHORT]", GetTodayShortDay()));
                 else if (mensaModel.Type == LocationType.Eth || mensaModel.Type == LocationType.EthAbendessen)
-                    mensaModel.TodayUrl =
-                        new Uri(mensaModel.LogicUrl.AbsoluteUri.Replace("[DAY_DATE]",
+                    mensaModel.TodayApiUrl =
+                        new Uri(mensaModel.ApiUrl.AbsoluteUri.Replace("[DAY_DATE]",
                             DateTime.Now.ToString("yyyy-MM-dd")));
                 else
-                    mensaModel.TodayUrl = mensaModel.LogicUrl;
+                    mensaModel.TodayApiUrl = mensaModel.ApiUrl;
 
-                var html = await _dataService.GetHtml(mensaModel.TodayUrl);
+                var html = await _dataService.GetHtml(mensaModel.TodayApiUrl);
                 if (html != null)
                 {
                     bool res = false;

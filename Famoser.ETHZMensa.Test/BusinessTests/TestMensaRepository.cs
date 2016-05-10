@@ -41,8 +41,8 @@ namespace Famoser.ETHZMensa.Test.BusinessTests
                     if (excludes.All(e => e != mensaModel.Name))
                     Assert.IsTrue(mensaModel.Menus.Count > 0, "Menus of Mensa " + JsonConvert.SerializeObject(mensaModel) + " empty");
 
-                    var html = await dataService.GetHtml(mensaModel.TodayUrl);
-                    Assert.IsNotNull(html, "TodayUrl of Mensa " + JsonConvert.SerializeObject(mensaModel) + " invalid");
+                    var html = await dataService.GetHtml(mensaModel.TodayApiUrl);
+                    Assert.IsNotNull(html, "TodayApiUrl of Mensa " + JsonConvert.SerializeObject(mensaModel) + " invalid");
 
                     html = await dataService.GetHtml(mensaModel.InfoUrl);
                     Assert.IsNotNull(html, "InfoUrl of Mensa " + JsonConvert.SerializeObject(mensaModel) + " invalid");

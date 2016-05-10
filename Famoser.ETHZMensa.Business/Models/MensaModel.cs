@@ -19,8 +19,8 @@ namespace Famoser.ETHZMensa.Business.Models
         public string Name { get; set; }
         public string MealTime { get; set; }
 
-        public Uri TodayUrl { get; set; }
-        public Uri LogicUrl { get; set; }
+        public Uri TodayApiUrl { get; set; }
+        public Uri ApiUrl { get; set; }
         public Uri InfoUrl { get; set; }
 
         private DateTime _lastTimeRefreshed;

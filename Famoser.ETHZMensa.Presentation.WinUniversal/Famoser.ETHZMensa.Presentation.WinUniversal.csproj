@@ -20,7 +20,7 @@
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>37EF32348F67CA496ADDF2576A94A2A808A19367</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>A878293BC14CC1DB307FB5EE87F4B0AF26AD0D82</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
