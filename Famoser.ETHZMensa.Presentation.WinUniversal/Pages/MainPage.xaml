@@ -42,6 +42,17 @@
                             <Hyperlink NavigateUri="https://github.com/famoser/ETHZMensa" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                                 <Run Text="github"/>
                             </Hyperlink>
+                            
+                            <LineBreak />
+                            <LineBreak />
+                            <Run Text="{Binding AdeMerci}" />
+                            <Run Text="Feel swiss with " />
+                            <Hyperlink NavigateUri="http://ademerci.ch" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                                <Run Text="ademerci.ch"/>
+                            </Hyperlink>
+                            <Run Text=":"></Run>
+                            <LineBreak />
+                            <Run Text="{Binding AdeMerci}" />
                         </TextBlock>
                     </StackPanel>
 

@@ -63,6 +63,8 @@
     <Compile Include="Models\MenuModel.cs" />
     <Compile Include="Models\SaveModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdeMerciRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IAdeMerciRepository.cs" />
     <Compile Include="Repositories\Interfaces\IMensaRepository.cs" />
     <Compile Include="Repositories\MensaRespository.cs" />
     <Compile Include="Services\IProgressService.cs" />

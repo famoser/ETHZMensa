@@ -49,6 +49,7 @@
             <SymbolIcon Symbol="{Binding Mensa.IsFavorite, Converter={StaticResource FavoriteToSymbolConverter}}" Style="{StaticResource FavoriteSymbolIcon}" />
         </Button>
         <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding Mensa.MealTime}" Style="{StaticResource SecondaryBigTexBlock}" />
+        <TextBlock Text="no menu today" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource SecondaryBigTexBlock}" />
         <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" VerticalAlignment="Bottom" Style="{StaticResource SecondaryBigTexBlock}" >
             <Run Text="refreshed:" />
             <Run Text="{Binding Mensa.LastTimeRefreshed, Converter={StaticResource DateTimeToStringConverter}}" />

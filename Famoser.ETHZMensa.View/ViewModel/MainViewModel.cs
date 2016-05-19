@@ -27,13 +27,15 @@ namespace Famoser.ETHZMensa.View.ViewModel
     {
         private readonly IMensaRepository _mensaRepository;
         private readonly INavigationService _navigationService;
+        private readonly IAdeMerciRepository _adeMerciRepository;
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public MainViewModel(IMensaRepository mensaRepository, INavigationService navigationService)
+        public MainViewModel(IMensaRepository mensaRepository, INavigationService navigationService, IAdeMerciRepository adeMerciRepository)
         {
             _mensaRepository = mensaRepository;
             _navigationService = navigationService;
+            _adeMerciRepository = adeMerciRepository;
             _refreshCommand = new RelayCommand(Refresh, () => CanExecuteRefreshCommand);
             _navigateTo = new RelayCommand<MensaModel>(NavigateTo);
 
@@ -69,6 +71,13 @@ namespace Famoser.ETHZMensa.View.ViewModel
             set { Set(ref _locations, value); }
         }
 
+        private string _adeMerci;
+        public string AdeMerci
+        {
+            get { return _adeMerci; }
+            set { Set(ref _adeMerci, value); }
+        }
+
         private LocationModel _selectedLocation;
         public LocationModel SelectedLocation
         {
@@ -96,6 +105,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
                 _isRefreshing = true;
                 _refreshCommand.RaiseCanExecuteChanged();
                 await _mensaRepository.Refresh();
+                AdeMerci = await _adeMerciRepository.GetAdeMerci() ?? "last download failed :(";
 
                 _isRefreshing = false;
                 _refreshCommand.RaiseCanExecuteChanged();

@@ -41,6 +41,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
             SimpleIoc.Default.Register<IProgressService, ProgressViewModel>();
 
             SimpleIoc.Default.Register<IMensaRepository, MensaRespository>();
+            SimpleIoc.Default.Register<IAdeMerciRepository, AdeMerciRepository>();
         }
 
         public MainViewModel MainViewModel
