@@ -18,10 +18,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Famoser.Telemetry.UniversalWindows;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Threading;
 using GalaSoft.MvvmLight.Views;
-using Microsoft.ApplicationInsights;
 
 namespace Famoser.ETHZMensa.Presentation.WinUniversal
 {
@@ -36,10 +36,10 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal
         /// </summary>
         public App()
         {
-            WindowsAppInitializer.InitializeAsync();
-
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            FamoserTelemetry.Initialize("https://api.telemetry.famoser.ch/1.0/submit", "6ceafa04-58c1-4547-ad40-10052de0188c");
         }
 
         /// <summary>

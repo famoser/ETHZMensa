@@ -1,9 +1,9 @@
 ﻿{
   "dependencies": {
-    "Famoser.FrameworkEssentials": "1.2.1",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
-    "MvvmLight": "5.2.0",
-    "Newtonsoft.Json": "8.0.3"
+    "Famoser.FrameworkEssentials": "2.6.4",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
+    "MvvmLight": "5.3.0",
+    "Newtonsoft.Json": "9.0.1"
   },
   "frameworks": {
     "uap10.0": {}

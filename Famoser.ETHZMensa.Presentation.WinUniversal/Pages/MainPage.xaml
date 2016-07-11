@@ -32,26 +32,16 @@
                             <TextBlock Grid.Column="0" Style="{StaticResource BigTexBlock}" Text="{Binding Favorites.Name}" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}" />
                         </Grid>
                         <ListView AllowDrop="True" CanDragItems="True" CanReorderItems="True"  ScrollViewer.VerticalScrollMode="Disabled" ItemClick="ListViewBase_OnItemClick" IsItemClickEnabled="True" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}" ItemContainerStyle="{StaticResource StretchListViewItemStyle}"  ItemTemplate="{StaticResource LocationDataTemplate}" ItemsSource="{Binding Locations}" />
-                        <TextBlock Margin="0,10,0,0" Style="{StaticResource SecondaryTexBlock}" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                            <Run Text="created with &#x2661; by " />
+                        <TextBlock FontFamily="Segoe UI" Margin="10" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                            <Run Text="made with &#x2661; by" />
                             <Hyperlink NavigateUri="http://famoser.ch" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                                 <Run Text="famoser"/>
                             </Hyperlink>
                             <LineBreak />
-                            <Run Text="source code on " />
+                            <Run Text="source code on" />
                             <Hyperlink NavigateUri="https://github.com/famoser/ETHZMensa" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                                 <Run Text="github"/>
                             </Hyperlink>
-                            
-                            <LineBreak />
-                            <LineBreak />
-                            <Run Text="feel swiss with " />
-                            <Hyperlink NavigateUri="http://ademerci.ch" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                                <Run Text="ademerci.ch"/>
-                            </Hyperlink>
-                            <Run Text=":" />
-                            <LineBreak />
-                            <Run Text="{Binding AdeMerci}" />
                         </TextBlock>
                     </StackPanel>
 

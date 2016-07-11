@@ -9,18 +9,20 @@ using Famoser.ETHZMensa.Business.Helpers;
 using Famoser.ETHZMensa.Business.Models;
 using Famoser.ETHZMensa.Business.Models.ConfigModels;
 using Famoser.ETHZMensa.Business.Repositories.Interfaces;
-using Famoser.ETHZMensa.Business.Services;
 using Famoser.ETHZMensa.Data.Services;
 using Famoser.FrameworkEssentials.Logging;
+using Famoser.FrameworkEssentials.Services.Interfaces;
 using Newtonsoft.Json;
+using IProgressService = Famoser.ETHZMensa.Business.Services.IProgressService;
 
 namespace Famoser.ETHZMensa.Business.Repositories
 {
     public class MensaRespository : IMensaRepository
     {
-        private IStorageService _storageService;
-        private IDataService _dataService;
-        private IProgressService _progressService;
+        private readonly IStorageService _storageService;
+        private readonly IDataService _dataService;
+        private readonly IProgressService _progressService;
+        private const string CacheFileName = "cache.json";
 
         private const int MaxConcurrentTasks = 10;
 
@@ -36,23 +38,23 @@ namespace Famoser.ETHZMensa.Business.Repositories
         {
             try
             {
-                var cache = await _storageService.GetCachedData();
+                var cache = await _storageService.GetCachedTextFileAsync(CacheFileName);
                 if (cache != null)
-                {
-                    try
-                    {
-                        _saveModel = JsonConvert.DeserializeObject<SaveModel>(cache);
-                    }
-                    catch (Exception ex)
-                    {
-                        LogHelper.Instance.LogException(ex);
-                        _saveModel = new SaveModel();
-                    }
-                }
-                if (_saveModel.Locations == null)
-                    _saveModel.Locations = new ObservableCollection<LocationModel>();
+                    _saveModel = JsonConvert.DeserializeObject<SaveModel>(cache);
+                else
+                    _saveModel = new SaveModel();
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Instance.LogException(ex);
+                _saveModel = new SaveModel();
+            }
+            if (_saveModel.Locations == null)
+                _saveModel.Locations = new ObservableCollection<LocationModel>();
 
-                var config = await _storageService.GetLocationJson();
+            try
+            {
+                var config = await _storageService.GetAssetTextFileAsync("Assets/Configuration/Locations.json");
                 if (config == null)
                     return _saveModel.Locations;
 
@@ -153,7 +155,7 @@ namespace Famoser.ETHZMensa.Business.Repositories
         }
 
 
-        private Queue<MensaModel> _refreshModels = new Queue<MensaModel>();
+        private readonly Queue<MensaModel> _refreshModels = new Queue<MensaModel>();
         public async Task<bool> Refresh()
         {
             var successful = true;
@@ -227,7 +229,7 @@ namespace Famoser.ETHZMensa.Business.Repositories
             try
             {
                 var locationJson = JsonConvert.SerializeObject(_saveModel);
-                return await _storageService.SetCachedData(locationJson);
+                return await _storageService.SetCachedTextFileAsync(CacheFileName, locationJson);
             }
             catch (Exception ex)
             {

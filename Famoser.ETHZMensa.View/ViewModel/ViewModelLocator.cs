@@ -12,10 +12,7 @@
   See http://www.galasoft.ch/mvvm
 */
 
-using Famoser.ETHZMensa.Business.Repositories;
-using Famoser.ETHZMensa.Business.Repositories.Interfaces;
-using Famoser.ETHZMensa.Business.Services;
-using Famoser.ETHZMensa.Data.Services;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
@@ -25,48 +22,37 @@ namespace Famoser.ETHZMensa.View.ViewModel
     /// This class contains static references to all the view models in the
     /// application and provides an entry point for the bindings.
     /// </summary>
-    public class BaseViewModelLocator
+    public class ViewModelLocator
     {
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
         /// </summary>
-        public BaseViewModelLocator()
+        public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
+            ////if (ViewModelBase.IsInDesignModeStatic)
+            ////{
+            ////    // Create design time view services and models
+            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
+            ////}
+            ////else
+            ////{
+            ////    // Create run time view services and models
+            ////    SimpleIoc.Default.Register<IDataService, DataService>();
+            ////}
+
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<MensaViewModel>();
-
-            SimpleIoc.Default.Register<IDataService, DataService>();
-            SimpleIoc.Default.Register<IProgressService, ProgressViewModel>();
-
-            SimpleIoc.Default.Register<IMensaRepository, MensaRespository>();
         }
 
-        public MainViewModel MainViewModel
+        public MainViewModel Main
         {
             get
             {
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-
-        public MensaViewModel MensaViewModel
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<MensaViewModel>();
-            }
-        }
-
-        public ProgressViewModel ProgressViewModel
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<IProgressService>() as ProgressViewModel;
-            }
-        }
-
+        
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

@@ -18,6 +18,8 @@ using Famoser.ETHZMensa.Presentation.WinUniversal.Services.Mocks;
 using Famoser.ETHZMensa.View.Enums;
 using Famoser.ETHZMensa.View.Services;
 using Famoser.ETHZMensa.View.ViewModel;
+using Famoser.FrameworkEssentials.Services.Interfaces;
+using Famoser.FrameworkEssentials.UniversalWindows.Platform;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
@@ -37,7 +39,7 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal.ViewModel
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-            SimpleIoc.Default.Register<IStorageService, StorageService>();
+            SimpleIoc.Default.Register<IStorageService>(() => new StorageService());
             SimpleIoc.Default.Register<IInteractionService, InteractionService>();
 
 
