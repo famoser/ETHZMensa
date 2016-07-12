@@ -74,25 +74,6 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal
                 rootFrame.Navigate(typeof(Pages.MainPage), e.Arguments);
             }
 
-            SystemNavigationManager.GetForCurrentView().BackRequested += (s, ev) =>
-            {
-                if (!ev.Handled)
-                {
-                    Frame frame = Window.Current.Content as Frame;
-
-                    if (frame != null && frame.CanGoBack)
-                    {
-                        var ns = SimpleIoc.Default.GetInstance<INavigationService>();
-                        ns.GoBack();
-                        ev.Handled = true;
-                    }
-                    else
-                    {
-                        Current.Exit();
-                    }
-                }
-            };
-
             InitView();
 
             DispatcherHelper.Initialize();

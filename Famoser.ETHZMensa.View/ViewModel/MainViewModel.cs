@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Famoser.ETHZMensa.Business.Models;
 using Famoser.ETHZMensa.Business.Repositories.Interfaces;
 using Famoser.ETHZMensa.View.Enums;
+using Famoser.FrameworkEssentials.Services.Interfaces;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
@@ -26,11 +27,11 @@ namespace Famoser.ETHZMensa.View.ViewModel
     public class MainViewModel : ViewModelBase
     {
         private readonly IMensaRepository _mensaRepository;
-        private readonly INavigationService _navigationService;
+        private readonly IHistoryNavigationService _navigationService;
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public MainViewModel(IMensaRepository mensaRepository, INavigationService navigationService)
+        public MainViewModel(IMensaRepository mensaRepository, IHistoryNavigationService navigationService)
         {
             _mensaRepository = mensaRepository;
             _navigationService = navigationService;
@@ -109,7 +110,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
 
         private void NavigateTo(MensaModel mensaModel)
         {
-            _navigationService.NavigateTo(Pages.MensaPage.ToString());
+            _navigationService.NavigateTo(PageKeys.Mensa.ToString());
             Messenger.Default.Send(mensaModel, Messages.Select);
         }
     }

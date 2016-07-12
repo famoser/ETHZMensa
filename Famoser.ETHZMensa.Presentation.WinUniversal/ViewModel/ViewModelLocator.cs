@@ -14,6 +14,7 @@
 
 using Famoser.ETHZMensa.Presentation.WinUniversal.Services;
 using Famoser.ETHZMensa.Presentation.WinUniversal.Services.Mocks;
+using Famoser.ETHZMensa.View.Enums;
 using Famoser.ETHZMensa.View.Services;
 using Famoser.ETHZMensa.View.ViewModel;
 using Famoser.FrameworkEssentials.Services.Interfaces;
@@ -43,14 +44,14 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal.ViewModel
 
             if (!ViewModelBase.IsInDesignModeStatic)
             {
-                var service = new CustomNavigationService();
-                service.Implementation.Configure(View.Enums.Pages.MainPage.ToString(), typeof (Pages.MainPage));
-                service.Implementation.Configure(View.Enums.Pages.MensaPage.ToString(), typeof (Pages.MensaPage));
-                SimpleIoc.Default.Register<INavigationService>(() => service);
+                var service = new HistoryNavigationServices();
+                service.Configure(PageKeys.Main.ToString(), typeof (Pages.MainPage));
+                service.Configure(PageKeys.Mensa.ToString(), typeof (Pages.MensaPage));
+                SimpleIoc.Default.Register<IHistoryNavigationService>(() => service);
             }
             else
             {
-                SimpleIoc.Default.Register<INavigationService, MockNavigationService>();
+                SimpleIoc.Default.Register<IHistoryNavigationService, MockHistoryNavigationService>();
             }
         }
     }
