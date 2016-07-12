@@ -12,10 +12,8 @@
   See http://www.galasoft.ch/mvvm
 */
 
-using Famoser.ETHZMensa.Data.Services;
 using Famoser.ETHZMensa.Presentation.WinUniversal.Services;
 using Famoser.ETHZMensa.Presentation.WinUniversal.Services.Mocks;
-using Famoser.ETHZMensa.View.Enums;
 using Famoser.ETHZMensa.View.Services;
 using Famoser.ETHZMensa.View.ViewModel;
 using Famoser.FrameworkEssentials.Services.Interfaces;

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Famoser.ETHZMensa.Business.Models.Eth
+﻿namespace Famoser.ETHZMensa.Business.Models.Eth
 {
     public class Opening
     {

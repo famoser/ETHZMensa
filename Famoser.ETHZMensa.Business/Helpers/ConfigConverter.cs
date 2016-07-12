@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Famoser.ETHZMensa.Business.Models;
 using Famoser.ETHZMensa.Business.Models.ConfigModels;
 using Famoser.FrameworkEssentials.Singleton;

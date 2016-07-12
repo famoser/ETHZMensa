@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Famoser.ETHZMensa.Business.Services;
+﻿using Famoser.ETHZMensa.Business.Services;
 
 namespace Famoser.ETHZMensa.Test.Setup.Services
 {

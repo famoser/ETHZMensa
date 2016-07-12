@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Famoser.ETHZMensa.Business.Enums;
+﻿using Famoser.ETHZMensa.Business.Enums;
 
 namespace Famoser.ETHZMensa.Business.Models.ConfigModels
 {
