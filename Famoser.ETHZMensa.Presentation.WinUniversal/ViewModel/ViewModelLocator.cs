@@ -44,7 +44,7 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal.ViewModel
 
             if (!ViewModelBase.IsInDesignModeStatic)
             {
-                var service = new HistoryNavigationServices();
+                var service = new HistoryNavigationService();
                 service.Configure(PageKeys.Main.ToString(), typeof (Pages.MainPage));
                 service.Configure(PageKeys.Mensa.ToString(), typeof (Pages.MensaPage));
                 SimpleIoc.Default.Register<IHistoryNavigationService>(() => service);

@@ -46,8 +46,10 @@ namespace Famoser.ETHZMensa.Business.Repositories
             catch (Exception ex)
             {
                 LogHelper.Instance.LogException(ex);
-                _saveModel = new SaveModel();
             }
+            if (_saveModel == null)
+                _saveModel = new SaveModel();
+
             if (_saveModel.Locations == null)
                 _saveModel.Locations = new ObservableCollection<LocationModel>();
 

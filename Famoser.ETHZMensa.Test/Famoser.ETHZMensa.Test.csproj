@@ -102,9 +102,6 @@
     <Compile Include="..\Famoser.ETHZMensa.Presentation.WinUniversal\Services\InteractionService.cs">
       <Link>Setup\Services\InteractionService.cs</Link>
     </Compile>
-    <Compile Include="..\Famoser.ETHZMensa.Presentation.WinUniversal\Services\StorageServcie.cs">
-      <Link>Setup\Services\StorageServcie.cs</Link>
-    </Compile>
     <Compile Include="Setup\Services\MockNavigationService.cs" />
     <Compile Include="Setup\Services\ProgressService.cs" />
     <Compile Include="Setup\UnitTestHelper.cs" />
@@ -124,7 +121,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Famoser.ETHZMensa.Test_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\UnitTestApp.rd.xml" />

@@ -1,14 +1,16 @@
 ﻿using Famoser.ETHZMensa.Business.Repositories;
 using Famoser.ETHZMensa.Business.Repositories.Interfaces;
-using Famoser.ETHZMensa.Business.Services;
 using Famoser.ETHZMensa.Data.Services;
 using Famoser.ETHZMensa.Presentation.WinUniversal.Services;
 using Famoser.ETHZMensa.Test.Setup.Services;
 using Famoser.ETHZMensa.View.Services;
+using Famoser.FrameworkEssentials.Services.Interfaces;
 using Famoser.FrameworkEssentials.Singleton;
+using Famoser.FrameworkEssentials.UniversalWindows.Platform;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
+using IProgressService = Famoser.ETHZMensa.Business.Services.IProgressService;
 
 namespace Famoser.ETHZMensa.Test.Setup
 {
@@ -17,7 +19,7 @@ namespace Famoser.ETHZMensa.Test.Setup
         public void SetupIoc()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-            SimpleIoc.Default.Register<IStorageService, StorageService>();
+            SimpleIoc.Default.Register<IStorageService>(() => new StorageService());
             SimpleIoc.Default.Register<IInteractionService, InteractionService>();
             SimpleIoc.Default.Register<INavigationService, MockNavigationService>();
             

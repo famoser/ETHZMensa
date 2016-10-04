@@ -4,6 +4,7 @@ using Famoser.ETHZMensa.Business.Models;
 using Famoser.ETHZMensa.Business.Repositories.Interfaces;
 using Famoser.ETHZMensa.Data.Services;
 using Famoser.ETHZMensa.Test.Setup;
+using Famoser.FrameworkEssentials.Services.Interfaces;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using Newtonsoft.Json;
@@ -30,7 +31,7 @@ namespace Famoser.ETHZMensa.Test.BusinessTests
             Assert.IsTrue(refreshResult, "refreshResult");
 
             //get json & deserialize
-            var json = await ss.GetCachedData();
+            var json = await ss.GetCachedTextFileAsync("cache.json");
             var saveModel = JsonConvert.DeserializeObject<SaveModel>(json);
             var excludes = new[] { "Bistro", "FUSION coffee", "Cafeteria Zentrum für Zahnmedizin (ZZM)", "Cafeteria Irchel Seerose - Abendessen" };
 
