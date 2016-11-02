@@ -12,13 +12,13 @@ namespace Famoser.ETHZMensa.Business.Helpers
 
         private static string EthInfoUrl = "https://www.ethz.ch/de/campus/gastronomie/restaurants-und-cafeterias/[INFO_URL_SLUG]";
 
-        private static string UzhApiUrl = "http://www.mensa.uzh.ch/menueplaene/[API_URL_SLUG]_[DAY_SHORT].html";
+        private static string UzhApiUrl = "http://www.mensa.uzh.ch/de/menueplaene/[API_URL_SLUG]/[DAY_LONG].html";
 
-        private static string UzhMenuUrl = "http://www.mensa.uzh.ch/menueplaene/[API_URL_SLUG]_[DAY_SHORT].html";
+        private static string UzhMenuUrl = "http://www.mensa.uzh.ch/de/menueplaene/[API_URL_SLUG]/[DAY_LONG].html";
 
-        private static string UzhInfoUrl = "http://www.mensa.uzh.ch/standorte/[INFO_URL_SLUG].html";
+        private static string UzhInfoUrl = "http://www.mensa.uzh.ch/de/standorte/[INFO_URL_SLUG].html";
 
-        private static string UzhInfoDayDependentUrl = "http://www.mensa.uzh.ch/standorte/[INFO_URL_SLUG]_[DAY_SHORT].html";
+        private static string UzhInfoDayDependentUrl = "http://www.mensa.uzh.ch/de/standorte/[INFO_URL_SLUG].html";
 
         public static Uri GetTodayApiUrl(MensaModel mensa)
         {
@@ -45,7 +45,13 @@ namespace Famoser.ETHZMensa.Business.Helpers
 
         private static Uri GetLink(string template, MensaModel mensa)
         {
-            return new Uri(template.Replace("[ID]", mensa.IdSlug).Replace("[DAY_DATE]", GetDayDate()).Replace("[DAY_SHORT]", GetDayShort()).Replace("[INFO_URL_SLUG]", mensa.InfoUrlSlug).Replace("[API_URL_SLUG]", mensa.ApiUrlSlug).Replace("[TIME_SLUG]", mensa.TimeSlug));
+            return new Uri(template.Replace("[ID]", mensa.IdSlug)
+                .Replace("[DAY_DATE]", GetDayDate())
+                .Replace("[DAY_SHORT]", GetDayShort())
+                .Replace("[DAY_LONG]", GetDayLong())
+                .Replace("[INFO_URL_SLUG]", mensa.InfoUrlSlug)
+                .Replace("[API_URL_SLUG]", mensa.ApiUrlSlug)
+                .Replace("[TIME_SLUG]", mensa.TimeSlug));
         }
 
         private static string GetDayShort()
@@ -63,6 +69,23 @@ namespace Famoser.ETHZMensa.Business.Helpers
             if (DateTime.Today.DayOfWeek == DayOfWeek.Saturday)
                 return "sa";
             return "so";
+        }
+
+        private static string GetDayLong()
+        {
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
+                return "montag";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
+                return "dienstag";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Wednesday)
+                return "mittwoch";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Thursday)
+                return "donnerstag";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Friday)
+                return "freitag";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Saturday)
+                return "samstag";
+            return "sonntag";
         }
 
         private static string GetDayDate()

@@ -62,10 +62,15 @@ namespace Famoser.ETHZMensa.Business.Helpers
         {
             try
             {
-                if (!html.Contains("<div class=\"news\""))
+                if (!html.Contains("<div class=\"text-basics\""))
                     return false;
 
-                html = html.Substring(html.IndexOf("<div class=\"news\"", StringComparison.Ordinal));
+                html = html.Substring(html.IndexOf("<div class=\"text-basics\"", StringComparison.Ordinal) + 5);
+                if (!html.Contains("<div class=\"text-basics\""))
+                    return false;
+
+                html = html.Substring(html.IndexOf("<div class=\"text-basics\"", StringComparison.Ordinal));
+
                 html = html.Substring(0, html.IndexOf("</div", StringComparison.Ordinal));
 
                 var entries = html.Split(new[] { "<h3>" }, StringSplitOptions.None);
