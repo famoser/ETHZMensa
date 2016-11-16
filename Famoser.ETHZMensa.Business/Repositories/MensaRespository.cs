@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -156,14 +157,14 @@ namespace Famoser.ETHZMensa.Business.Repositories
         }
 
 
-        private readonly Queue<MensaModel> _refreshModels = new Queue<MensaModel>();
+        private ConcurrentQueue<MensaModel> _refreshModels = new ConcurrentQueue<MensaModel>();
         public async Task<bool> Refresh()
         {
             var successful = true;
             try
             {
                 _progressService.InitializeProgressBar(_saveModel.Locations.Sum(l => l.Mensas.Count));
-                _refreshModels.Clear();
+                _refreshModels = new ConcurrentQueue<MensaModel>();
                 var list = new List<Task>();
                 foreach (var locationModel in _saveModel.Locations)
                 {
@@ -207,7 +208,9 @@ namespace Famoser.ETHZMensa.Business.Repositories
         {
             while (_refreshModels.Count > 0)
             {
-                var mensaModel = _refreshModels.Dequeue();
+                MensaModel mensaModel;
+                if (!_refreshModels.TryDequeue(out mensaModel))
+                    continue;
 
                 var html = await _dataService.GetHtml(mensaModel.TodayApiUrl);
                 if (html != null)
