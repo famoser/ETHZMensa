@@ -33,7 +33,7 @@ namespace Famoser.ETHZMensa.Test.BusinessTests
             //get json & deserialize
             var json = await ss.GetCachedTextFileAsync("cache.json");
             var saveModel = JsonConvert.DeserializeObject<SaveModel>(json);
-            var excludes = new[] { "Bistro", "FUSION coffee", "Cafeteria Zentrum für Zahnmedizin (ZZM)", "Cafeteria Irchel Seerose - Abendessen" };
+            var excludes = new[] { "Bistro", "FUSION coffee", "Cafeteria Irchel Atrium", "Cafeteria Zentrum für Zahnmedizin (ZZM)", "Cafeteria Irchel Seerose - Abendessen" };
 
             foreach (var locationModel in saveModel.Locations)
             {

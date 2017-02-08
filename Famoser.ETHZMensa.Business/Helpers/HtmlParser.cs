@@ -40,24 +40,6 @@ namespace Famoser.ETHZMensa.Business.Helpers
             return false;
         }
 
-        public bool ParseEthAbendessenHtml(string html, MensaModel mensa)
-        {
-            try
-            {
-                if (!html.Contains("<table class=\"silvatable grid\""))
-                    return false;
-
-                html = html.Substring(html.IndexOf("<table class=\"silvatable grid\"", StringComparison.Ordinal) + 20);
-
-                return ParseEthHtml(html, mensa);
-            }
-            catch (Exception ex)
-            {
-                LogHelper.Instance.LogException(ex);
-            }
-            return false;
-        }
-
         public bool ParseUzhHtml(string html, MensaModel mensa)
         {
             try

@@ -135,10 +135,10 @@
       "Name": "UZH Zentrum",
       "Mensas": [
         {
-          "Name": "Untere Mensa A",
+          "Name": "Untere Mensa",
           "MealTime": "11:00-14:30",
           "Type": 2,
-          "ApiUrlSlug": "zentrum-a",
+          "ApiUrlSlug": "zentrum-mercato",
           "InfoUrlSlug": "mensa-uzh-zentrum",
           "InfoDayDependent": true
         },
@@ -146,7 +146,7 @@
           "Name": "Untere Mensa A - Abendessen",
           "MealTime": "17:00-19:30",
           "Type": 2,
-          "ApiUrlSlug": "zentrum-a-abend",
+          "ApiUrlSlug": "zentrum-mercato-abend",
           "InfoUrlSlug": "mensa-uzh-zentrum",
           "InfoDayDependent": true
         },
@@ -154,7 +154,7 @@
           "Name": "Obere Mensa B",
           "MealTime": "11:00-14:30",
           "Type": 2,
-          "ApiUrlSlug": "zentrum-b",
+          "ApiUrlSlug": "zentrum-mensa",
           "InfoUrlSlug": "mensa-uzh-zentrum",
           "InfoDayDependent": true
         },
