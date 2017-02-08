@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="10401FlorianMoser.ETHMensa" Publisher="CN=11675D3B-05AA-4B24-A422-AD2FB58E21ED" Version="1.5.21.0" />
+  <Identity Name="10401FlorianMoser.ETHMensa" Publisher="CN=famoser" Version="1.5.27.0" />
   <mp:PhoneIdentity PhoneProductId="cafe2087-bfe0-43cd-9f57-d719eaba00b1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>ETHMensa</DisplayName>
     <PublisherDisplayName>Florian Moser</PublisherDisplayName>
-    <Logo>Assets\NewStoreLogo.png</Logo>
+    <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Famoser.ETHZMensa.Presentation.WinUniversal.App">
-      <uap:VisualElements DisplayName="ETHMensa" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="ETH Mensa Menuchecker" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="ETHMensa" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="ETH &amp; UZH Mensa" BackgroundColor="transparent">
         <uap:DefaultTile Square310x310Logo="Assets\Square310x310Logo.png" Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\Square71x71Logo.png">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo" />
