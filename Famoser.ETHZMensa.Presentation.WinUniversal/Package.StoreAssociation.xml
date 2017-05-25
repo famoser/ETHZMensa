@@ -365,12 +365,12 @@
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
     <MainPackageIdentityName>10401FlorianMoser.BeerCompanion</MainPackageIdentityName>
+    <MainPackageIdentityName>10401FlorianMoser.Bookmarked</MainPackageIdentityName>
     <MainPackageIdentityName>10401FlorianMoser.ExpenseMonitor</MainPackageIdentityName>
     <MainPackageIdentityName>10401FlorianMoser.Gymoberwil</MainPackageIdentityName>
     <MainPackageIdentityName>10401FlorianMoser.LectureSync</MainPackageIdentityName>
     <MainPackageIdentityName>10401FlorianMoser.OfflineMedia</MainPackageIdentityName>
     <MainPackageIdentityName>10401FlorianMoser.rememberless</MainPackageIdentityName>
-    <MainPackageIdentityName>10401FlorianMoser.Stuy</MainPackageIdentityName>
   </AccountPackageIdentityNames>
   <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9NBLGGH4R7GH" />
 </StoreAssociation>
