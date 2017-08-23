@@ -35,6 +35,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -50,12 +51,13 @@
         </Button>
         <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding Mensa.MealTime}" Style="{StaticResource SecondaryBigTexBlock}" />
         <TextBlock Text="no menu today" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource SecondaryBigTexBlock}" />
-        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" VerticalAlignment="Bottom" Style="{StaticResource SecondaryBigTexBlock}" >
+       
+        <ListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" ItemTemplate="{StaticResource MenuDataTemplate}" ItemContainerStyle="{StaticResource StretchListViewItemStyle}" IsItemClickEnabled="True" ItemsSource="{Binding Mensa.Menus}" />
+        <TextBlock Padding="10" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" Style="{StaticResource SecondaryBigTexBlock}" >
             <Run Text="refreshed:" />
             <Run Text="{Binding Mensa.LastTimeRefreshed, Converter={StaticResource DateTimeToStringConverter}}" />
-        </TextBlock>
-        <ListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" ItemTemplate="{StaticResource MenuDataTemplate}" ItemContainerStyle="{StaticResource StretchListViewItemStyle}" IsItemClickEnabled="True" ItemsSource="{Binding Mensa.Menus}" />
-        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3"  Padding="10">    
+        </TextBlock> 
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4"  Padding="10,0,10,10">    
                 <Hyperlink NavigateUri="{Binding Mensa.InfoUrl}">
                     <Run Text="Mehr Informationen" />
                 </Hyperlink>

@@ -5,9 +5,13 @@
     xmlns:local="using:Famoser.ETHZMensa.Presentation.WinUniversal"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:Famoser.ETHZMensa.Presentation.WinUniversal.Converters"
     mc:Ignorable="d"
     DataContext="{Binding MainViewModel, Source={StaticResource Locator}}" Loaded="Page_Loaded">
+    
+    
     <Page.Resources>
+        <converters:MensaStateToSymbolIconConverter x:Key="MensaStateToSymbolIconConverter" />
         <DataTemplate x:Key="LocationDataTemplate">
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                 <TextBlock Grid.Column="0" Style="{StaticResource BigTexBlock}" Text="{Binding Name}" Foreground="{ThemeResource SystemControlBackgroundAccentBrush}" />
@@ -16,8 +20,11 @@
         <DataTemplate x:Key="MensaDataTemplate">
             <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}">
                 <TextBlock Grid.Column="0" Style="{StaticResource BigTexBlock}" Text="{Binding Name}" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}" />
-                <SymbolIcon Symbol="SolidStar" Foreground="White" Margin="10" HorizontalAlignment="Right" Visibility="{Binding IsFavorite, Converter={StaticResource BooleanToVisibilityConverter}}" />
-            </Grid>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <SymbolIcon Symbol="SolidStar" Foreground="White" Margin="10" Visibility="{Binding IsFavorite, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <SymbolIcon Symbol="{Binding Converter={StaticResource MensaStateToSymbolIconConverter}}" Foreground="White" Margin="10" />
+                </StackPanel>
+                </Grid>
         </DataTemplate>
     </Page.Resources>
 
