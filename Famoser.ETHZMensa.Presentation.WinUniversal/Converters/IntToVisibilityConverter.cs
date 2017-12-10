@@ -8,10 +8,15 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            var val = (int) value;
-            if (val > 0)
-                return Visibility.Visible;
-            return Visibility.Collapsed;
+            Visibility visible = Visibility.Visible;
+            Visibility collapsed = Visibility.Collapsed;
+            if (parameter is string && (string)parameter == "invert")
+            {
+                visible = collapsed;
+                collapsed = Visibility.Visible;
+            }
+            var val = (int)value;
+            return val > 0 ? visible : collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

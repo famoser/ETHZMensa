@@ -29,6 +29,14 @@
           "InfoUrlSlug": "zentrum/foodtrailer-etz"
         },
         {
+          "Name": "G-ESSbar",
+          "MealTime": "11:15-13:30",
+          "Type": 1,
+          "IdSlug": 11,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "zentrum/g-essbar"
+        },
+        {
           "Name": "Mensa Polyterrasse",
           "MealTime": "11:00-13:30",
           "Type": 1,
@@ -51,14 +59,6 @@
           "IdSlug": 13,
           "TimeSlug": "lunch",
           "InfoUrlSlug": "zentrum/polysnack"
-        },
-        {
-          "Name": "Restaurant foodLAB",
-          "MealTime": "11:00-14:00",
-          "Type": 1,
-          "IdSlug": 8,
-          "TimeSlug": "lunch",
-          "InfoUrlSlug": "zentrum/foodlab"
         },
         {
           "Name": "Tannenbar",
@@ -120,14 +120,6 @@
           "IdSlug": 22,
           "TimeSlug": "lunch",
           "InfoUrlSlug": "hoenggerberg/fusion-coffee"
-        },
-        {
-          "Name": "WOKA",
-          "MealTime": "10:45-14:15",
-          "Type": 1,
-          "IdSlug": 23,
-          "TimeSlug": "lunch",
-          "InfoUrlSlug": "hoenggerberg/woka"
         }
       ]
     },

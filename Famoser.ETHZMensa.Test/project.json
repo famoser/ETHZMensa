@@ -2,12 +2,12 @@
   "dependencies": {
     "Famoser.FrameworkEssentials": "2.7.6",
     "Famoser.FrameworkEssentials.UniversalWindows": "1.2.1",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.4",
     "MvvmLight": "5.3.0",
-    "Newtonsoft.Json": "9.0.1"
+    "Newtonsoft.Json": "10.0.3"
   },
   "frameworks": {
-    "uap10.0": {}
+    "uap10.0.10240": {}
   },
   "runtimes": {
     "win10-arm": {},
