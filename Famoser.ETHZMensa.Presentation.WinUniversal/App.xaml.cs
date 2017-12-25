@@ -74,21 +74,10 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal
                 rootFrame.Navigate(typeof(Pages.MainPage), e.Arguments);
             }
 
-            InitView();
-
             DispatcherHelper.Initialize();
 
             // Ensure the current window is active
             Window.Current.Activate();
-        }
-
-        private async void InitView()
-        {
-            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-            {
-                var statusBar = StatusBar.GetForCurrentView();
-                await statusBar.HideAsync();
-            }
         }
 
         /// <summary>
@@ -111,7 +100,6 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
             deferral.Complete();
         }
     }
