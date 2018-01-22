@@ -8,8 +8,8 @@
     xmlns:converters="using:Famoser.ETHZMensa.Presentation.WinUniversal.Converters"
     mc:Ignorable="d"
     DataContext="{Binding MainViewModel, Source={StaticResource Locator}}" Loaded="Page_Loaded">
-    
-    
+
+
     <Page.Resources>
         <converters:MensaStateToSymbolIconConverter x:Key="MensaStateToSymbolIconConverter" />
         <DataTemplate x:Key="LocationDataTemplate">
@@ -22,9 +22,9 @@
                 <TextBlock Grid.Column="0" Style="{StaticResource BigTexBlock}" Text="{Binding Name}" Foreground="{ThemeResource ApplicationPageBackgroundThemeBrush}" />
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                     <SymbolIcon Symbol="SolidStar" Foreground="White" Margin="10" Visibility="{Binding IsFavorite, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                    <SymbolIcon Symbol="{Binding Converter={StaticResource MensaStateToSymbolIconConverter}}" Foreground="White" Margin="10" />
+                    <SymbolIcon Symbol="{Binding HasMenus, Converter={StaticResource MensaStateToSymbolIconConverter}}" Foreground="White" Margin="10" />
                 </StackPanel>
-                </Grid>
+            </Grid>
         </DataTemplate>
     </Page.Resources>
 

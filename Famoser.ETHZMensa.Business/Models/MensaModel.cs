@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Famoser.ETHZMensa.Business.Enums;
 using Famoser.ETHZMensa.Business.Helpers;
 using Famoser.ETHZMensa.Business.Models.Base;
@@ -31,8 +32,14 @@ namespace Famoser.ETHZMensa.Business.Models
         private DateTime _lastTimeRefreshed;
         public DateTime LastTimeRefreshed
         {
-            get { return _lastTimeRefreshed; }
-            set { Set(ref _lastTimeRefreshed, value); }
+            get => _lastTimeRefreshed;
+            set
+            {
+                if (Set(ref _lastTimeRefreshed, value))
+                {
+                    RaisePropertyChanged(() => HasMenus);
+                }
+            }
         }
 
         private bool _isFavorite;
@@ -41,6 +48,8 @@ namespace Famoser.ETHZMensa.Business.Models
             get { return _isFavorite; }
             set { Set(ref _isFavorite, value); }
         }
+
+        public bool HasMenus => LastTimeRefreshed > DateTime.Today && Menus.Any();
 
         public ObservableCollection<MenuModel> Menus { get; set; }
     }
