@@ -13,12 +13,7 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            var mensa = (MensaModel)value;
-            if (mensa.LastTimeRefreshed > DateTime.Today && mensa.Menus.Any())
-            {
-                return Symbol.Accept;
-            }
-            return Symbol.Clear;
+            return (bool)value ? Symbol.Accept : Symbol.Clear;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
