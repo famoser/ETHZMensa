@@ -45,6 +45,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Design\MensaRepositoryMock.cs" />
     <Compile Include="Enums\Messages.cs" />
     <Compile Include="Enums\PageKeys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -101,62 +101,6 @@ namespace Famoser.ETHZMensa.Business.Repositories
             return _favorites;
         }
 
-        public ObservableCollection<LocationModel> GetExampleLocations()
-        {
-            return new ObservableCollection<LocationModel>()
-            {
-                GetExampleLocationModel(),
-                GetExampleLocationModel(),
-                GetExampleLocationModel()
-            };
-        }
-
-        private LocationModel GetExampleLocationModel()
-        {
-            return new LocationModel()
-            {
-                Name = "Hönggerbärg",
-                Mensas = new ObservableCollection<MensaModel>()
-                {
-                    GetExampleMensaModel(),
-                    GetExampleMensaModel(),
-                    GetExampleMensaModel(),
-                    GetExampleMensaModel()
-                }
-            };
-        }
-
-        private MensaModel GetExampleMensaModel()
-        {
-            return new MensaModel()
-            {
-                Name = "Clasiusbar",
-                MealTime = "07:30 - 19:30",
-                LastTimeRefreshed = DateTime.Now,
-                Menus = new ObservableCollection<MenuModel>()
-                {
-                    GetExampleMenuModel(),
-                    GetExampleMenuModel(),
-                    GetExampleMenuModel(),
-                    GetExampleMenuModel(),
-                    GetExampleMenuModel()
-                }
-            };
-        }
-
-        private MenuModel GetExampleMenuModel()
-        {
-            return new MenuModel()
-            {
-                Title = "Salat",
-                Description =
-                        "Exotischer Fruchtsalat mit Kokosnussmilch und Palmzucker\auf Wunsch mit zusätzlichen Vitamenin",
-                MenuName = "Salat Buah",
-                Prices = "3.30/3.30/4.50"
-            };
-        }
-
-
         private ConcurrentQueue<MensaModel> _refreshModels = new ConcurrentQueue<MensaModel>();
         public async Task<bool> Refresh()
         {

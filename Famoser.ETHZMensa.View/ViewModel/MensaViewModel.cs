@@ -26,7 +26,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
             Messenger.Default.Register<MensaModel>(this, Messages.Select, EvaluateSelect);
 
             if (IsInDesignMode)
-                Mensa = mensaRepository.GetExampleLocations()[0].Mensas[0];
+                Mensa = mensaRepository.GetFavorites().Mensas[0];
         }
 
         private void EvaluateSelect(MensaModel obj)

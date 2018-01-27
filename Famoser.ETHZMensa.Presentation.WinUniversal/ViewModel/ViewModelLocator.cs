@@ -35,7 +35,7 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal.ViewModel
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
         /// </summary>
-        public ViewModelLocator()
+        static ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<IStorageService>(() => new StorageService());

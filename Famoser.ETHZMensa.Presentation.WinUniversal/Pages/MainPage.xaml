@@ -51,7 +51,6 @@
                             </Hyperlink>
                         </TextBlock>
                     </StackPanel>
-
                 </ScrollViewer>
             </ScrollViewer>
         </SplitView.Pane>

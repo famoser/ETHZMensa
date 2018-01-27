@@ -16,6 +16,8 @@ using Famoser.ETHZMensa.Business.Repositories;
 using Famoser.ETHZMensa.Business.Repositories.Interfaces;
 using Famoser.ETHZMensa.Business.Services;
 using Famoser.ETHZMensa.Data.Services;
+using Famoser.ETHZMensa.View.Design;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
@@ -30,7 +32,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
         /// </summary>
-        public BaseViewModelLocator()
+        static BaseViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
@@ -40,7 +42,16 @@ namespace Famoser.ETHZMensa.View.ViewModel
             SimpleIoc.Default.Register<IDataService, DataService>();
             SimpleIoc.Default.Register<IProgressService, ProgressViewModel>();
 
-            SimpleIoc.Default.Register<IMensaRepository, MensaRespository>();
+
+            if (!ViewModelBase.IsInDesignModeStatic)
+            {
+                SimpleIoc.Default.Register<IMensaRepository, MensaRepositoryMock>();
+            }
+            else
+            {
+                SimpleIoc.Default.Register<IMensaRepository, MensaRespository>();
+            }
+
         }
 
         public MainViewModel MainViewModel

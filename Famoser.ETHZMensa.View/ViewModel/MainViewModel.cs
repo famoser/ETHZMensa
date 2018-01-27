@@ -38,10 +38,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
             _refreshCommand = new RelayCommand(Refresh, () => CanExecuteRefreshCommand);
             _navigateTo = new RelayCommand<MensaModel>(NavigateTo);
 
-            if (IsInDesignMode)
-                Locations = _mensaRepository.GetExampleLocations();
-            else
-                Initialize();
+            Initialize();
         }
 
         private bool _initialized;

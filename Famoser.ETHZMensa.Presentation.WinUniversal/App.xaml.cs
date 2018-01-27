@@ -76,6 +76,13 @@ namespace Famoser.ETHZMensa.Presentation.WinUniversal
 
             DispatcherHelper.Initialize();
 
+            //hide topbar
+            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                var statusBar = StatusBar.GetForCurrentView();
+                statusBar.HideAsync();
+            }
+
             // Ensure the current window is active
             Window.Current.Activate();
         }
