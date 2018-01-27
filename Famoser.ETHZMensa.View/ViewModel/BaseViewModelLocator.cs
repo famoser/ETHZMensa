@@ -43,7 +43,7 @@ namespace Famoser.ETHZMensa.View.ViewModel
             SimpleIoc.Default.Register<IProgressService, ProgressViewModel>();
 
 
-            if (!ViewModelBase.IsInDesignModeStatic)
+            if (ViewModelBase.IsInDesignModeStatic)
             {
                 SimpleIoc.Default.Register<IMensaRepository, MensaRepositoryMock>();
             }
