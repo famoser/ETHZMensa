@@ -1,6 +1,6 @@
-MainPackage=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Famoser.ETHZMensa.Presentation.WinUniversal_2018.1.47.0_ARM.appx
-SymbolPackage=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\AppPackages\Famoser.ETHZMensa.Presentation.WinUniversal_2018.1.47.0_Test\Famoser.ETHZMensa.Presentation.WinUniversal_2018.1.47.0_ARM.appxsym
-ResourcePack=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Famoser.ETHZMensa.Presentation.WinUniversal_2018.1.47.0_scale-100.appx
-ResourcePack=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Famoser.ETHZMensa.Presentation.WinUniversal_2018.1.47.0_scale-125.appx
-ResourcePack=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Famoser.ETHZMensa.Presentation.WinUniversal_2018.1.47.0_scale-150.appx
-ResourcePack=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Famoser.ETHZMensa.Presentation.WinUniversal_2018.1.47.0_scale-400.appx
+MainPackage=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Famoser.ETHZMensa.Presentation.WinUniversal_2018.2.48.0_ARM.appx
+SymbolPackage=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\AppPackages\Famoser.ETHZMensa.Presentation.WinUniversal_2018.2.48.0_Test\Famoser.ETHZMensa.Presentation.WinUniversal_2018.2.48.0_ARM.appxsym
+ResourcePack=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Famoser.ETHZMensa.Presentation.WinUniversal_2018.2.48.0_scale-100.appx
+ResourcePack=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Famoser.ETHZMensa.Presentation.WinUniversal_2018.2.48.0_scale-125.appx
+ResourcePack=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Famoser.ETHZMensa.Presentation.WinUniversal_2018.2.48.0_scale-150.appx
+ResourcePack=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\ARM\Release\Famoser.ETHZMensa.Presentation.WinUniversal_2018.2.48.0_scale-400.appx

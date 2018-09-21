@@ -1,2 +1,2 @@
-MainPackage=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\x64\Release\Upload\Famoser.ETHZMensa.Presentation.WinUniversal_2018.1.47.0_x64.appx
-SymbolPackage=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\x64\Release\Upload\Famoser.ETHZMensa.Presentation.WinUniversal_2018.1.47.0\Famoser.ETHZMensa.Presentation.WinUniversal_2018.1.47.0_x64.appxsym
+MainPackage=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\x64\Release\Upload\Famoser.ETHZMensa.Presentation.WinUniversal_2018.2.48.0_x64.appx
+SymbolPackage=D:\Repos\ETHZMensa\Famoser.ETHZMensa.Presentation.WinUniversal\bin\x64\Release\Upload\Famoser.ETHZMensa.Presentation.WinUniversal_2018.2.48.0\Famoser.ETHZMensa.Presentation.WinUniversal_2018.2.48.0_x64.appxsym
