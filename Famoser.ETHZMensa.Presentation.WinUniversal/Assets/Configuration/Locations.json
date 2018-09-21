@@ -1,5 +1,5 @@
 ﻿{
-  "Version": 8,
+  "Version": 9,
   "Locations": [
     {
       "Name": "Zentrum",
@@ -19,6 +19,14 @@
           "IdSlug": 6,
           "TimeSlug": "lunch",
           "InfoUrlSlug": "zentrum/dozentenfoyer"
+        },
+        {
+          "Name": "food&lap",
+          "MealTime": "11:30-13:30",
+          "Type": 1,
+          "IdSlug": 28,
+          "TimeSlug": "lunch",
+          "InfoUrlSlug": "zentrum/foodlab"
         },
         {
           "Name": "Foodtrailer",
